@@ -1,93 +1,90 @@
 /* ======================================================
    JAVASCRIPT FUNDAMENTALS CHALLENGES
    Topics Covered:
-   - Data Types (String, Number, Array, Boolean)
+   - Data Types (String, Number, Boolean)
    - Variables (var, let, const)
    - Variable Declaration and Usage
 ======================================================== */
 
 // ======================================================
-// CHALLENGE 1: Data Types and Output
+// CHALLENGE 1: Strings
 // ======================================================
 
 /*
 QUESTION:
-You have the following code. What will appear in console.log for each line?
+Create two string variables for first name and last name.
+Combine them into a full name and print it with a sentence.
 */
 
-let product = "Laptop";
-let price = 1500;
-let available = true;
-let features = ["16GB RAM", "512GB SSD", "Intel i7"];
+var firstName = "Lora";
+var lastName = "Mohamed";
 
-console.log("1:", typeof product);
-console.log("2:", typeof price);
-console.log("3:", typeof available);
-console.log("4:", typeof features);
-console.log("5:", features[1]);
+var fullName = firstName + " " + lastName;
+console.log("Full Name:", fullName);
 
 /* ANSWER:
-1: string
-2: number
-3: boolean
-4: object
-5: 512GB SSD
+Full Name: Lora Mohamed
 */
 
 // ======================================================
-// CHALLENGE 2: Difference between var, let, and const
+// CHALLENGE 2: Numbers
 // ======================================================
 
 /*
 QUESTION:
-What will happen in the following code? Determine if it will work normally or give an error
+Create two number variables: age and year.
+Print a sentence like "Your age is 17 and the year is 2025."
 */
 
-var userName = "Ali";
-var userName = "Mohamed"; // Is this allowed?
+let age = 17;
+let year = 2025;
 
-let userAge = 25;
-// let userAge = 30; // If we uncomment this line, what will happen?
-
-const userCountry = "Egypt";
-// userCountry = "KSA"; // If we uncomment this line, what will happen?
-
-console.log("1:", userName);
-console.log("2:", userAge);
-console.log("3:", userCountry);
+console.log("Your age is " + age + " and the year is " + year);
 
 /* ANSWER:
-- First line with var: Allowed and works
-- Second line with let: If uncommented, will give error (cannot redeclare)
-- Third line with const: If uncommented, will give error (cannot change value)
-Output:
-1: Mohamed
-2: 25
-3: Egypt
+Your age is 17 and the year is 2025
 */
 
 // ======================================================
-// CHALLENGE 3: Working with Arrays
+// CHALLENGE: Boolean Question
 // ======================================================
 
 /*
 QUESTION:
-You have the following array. What is the output value in each console.log?
+You have a boolean variable to check if Mohamed is logged in.
+Print "Mohamed is logged in" if true, or "Mohamed is not logged in" if false.
 */
 
-let numbers = [10, 20, 30];
+const LogIn = true;
 
-numbers[1] = 25;
-numbers.push(40);
+console.log("isMohamedLoggedIn" + LogIn);
+/* ANSWER
+Mohamed is logged in
+*/
 
-console.log("1:", numbers.length);
-console.log("2:", numbers[0]);
-console.log("3:", numbers[1]);
-console.log("4:", numbers[3]);
+// ======================================================
+// CHALLENGE 4: Var vs Let vs Const
+// ======================================================
+
+/*
+QUESTION:
+Test var, let, and const behavior.
+*/
+
+var product = "Table";
+var product = "Chair"; // redeclare allowed
+console.log("Var product:", product); // Chair
+
+let page = "Home";
+// let page = "About"; // Uncommenting will cause Error
+console.log("Let page:", page);
+
+const tax = 5;
+// tax = 10; // Uncommenting will cause Error
+console.log("Const tax:", tax);
 
 /* ANSWER:
-1: 4
-2: 10
-3: 25
-4: 40
+Var product: Chair
+Let page: Home
+Const tax: 5
 */
