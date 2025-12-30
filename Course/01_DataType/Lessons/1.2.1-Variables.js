@@ -18,13 +18,13 @@ Covered Topics (ONLY the original ones):
 // - A variable is a place to store a value
 // ======================================================
 
-var user = "Sayed";
+var user = "Loid";
 
 console.log(user);
 
 /*
 Result:
-Sayed
+Loid
 */
 
 
