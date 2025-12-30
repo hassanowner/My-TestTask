@@ -16,7 +16,7 @@ Covered Topics (ONLY the ones you provided):
 // - Created using single quotes, double quotes, or backticks
 // ======================================================
 
-let firstName = "Osama";
+let firstName = "Mona";
 let lastName = "Mohamed";
 let fullName = firstName + " " + lastName; // String concatenation
 
@@ -25,7 +25,7 @@ console.log(typeof fullName);
 
 /*
 Result:
-Osama Mohamed
+Mona Mohamed
 "string"
 */
 
