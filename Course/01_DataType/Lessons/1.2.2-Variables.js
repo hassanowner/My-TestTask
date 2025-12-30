@@ -1,6 +1,6 @@
 /*
 ========================================================
-Var vs Let vs Const — Simple Explanation
+Var vs Let vs Const — Explanation
 Covered Topics (FULL original titles and explanations):
 --------------------------------------------------------
 
