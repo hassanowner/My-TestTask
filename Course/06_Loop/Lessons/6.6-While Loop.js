@@ -158,6 +158,55 @@ Guarded item: Monitor
 Guarded item: iPhone
 */
 
+
+
+/* =========================
+5) Named while loop — stop outer loop using a label
+========================= */
+
+outerLoop: while (true) { // We named this loop "outerLoop"
+  let rand = Math.floor(Math.random() * 10); // Random number from 0 to 9
+  console.log(`Generated number: ${rand}`);
+  if (rand > 7) {
+    console.log("Number > 7, breaking outerLoop!");
+    break outerLoop; // Break the named loop directly
+  }
+}
+
+/*
+Possible console output:
+Generated number: 3
+Generated number: 5
+Generated number: 8
+Number > 7, breaking outerLoop!
+*/
+
+/* =========================
+6) Nested loops with named break
+========================= */
+
+outerCheck: while (true) {
+  for (let j = 0; j < 5; j++) {
+    let value = Math.floor(Math.random() * 10);
+    console.log(`Inner value: ${value}`);
+    if (value === 6) {
+      console.log("Found 6, breaking outerCheck loop!");
+      break outerCheck; // Stop the named loop from inside the inner loop
+    }
+  }
+}
+
+/*
+Possible console output:
+Inner value: 2
+Inner value: 4
+Inner value: 6
+Found 6, breaking outerCheck loop!
+*/
+
+
+
+
 /* =========================
    Quick Cheatsheet / Tips
    =========================
