@@ -27,7 +27,7 @@ ORIGINAL ARRAY (MIXED DATA TYPES)
 ========================================================
 */
 
-let myFriends = [1, 2, "Osama", "Ahmed", 3, 4, "Sayed", 6, "Ali"];
+let myFriends = [1, 2, "Lina", "Ahmed", 3, 4, "Roan", 6, "Ali"];
 
 
 /*
@@ -92,7 +92,7 @@ console.log(onlyNames);
 
 /*
 Output:
-["Osama", "Ahmed", "Sayed", "Ali"]
+["Lina", "Ahmed", "Roan", "Ali"]
 */
 
 
