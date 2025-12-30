@@ -1,4 +1,4 @@
-
+/*
 • What Is OOP?
   - OOP stands for Object-Oriented Programming.
   - It is a programming paradigm (a style or way of writing code).
@@ -54,3 +54,4 @@
   - Reusable components.
   - Easier maintenance and scalability.
   - Clear and readable architecture.
+*/
