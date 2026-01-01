@@ -30,10 +30,61 @@ Topics Covered:
 
 condition ? valueIfTrue : valueIfFalse;
 
+//- condition: a boolean expression
+//- valueIfTrue: returned or executed if the condition is true
+//- valueIfFalse: returned or executed if the condition is false
+
+
 /*
-- condition: a boolean expression
-- valueIfTrue: returned or executed if the condition is true
-- valueIfFalse: returned or executed if the condition is false
+========================================================
+TERNARY OPERATOR — VISUALIZATION
+========================================================
+
+Syntax:
+condition ? valueIfTrue : valueIfFalse;
+
+Flowchart:
+
+            Start
+              |
+              v
+    [Evaluate condition?]
+              |
+      ---------------------
+     |                     |
+    Yes                    No
+     |                     |
+     v                     v
+[valueIfTrue]        [valueIfFalse]
+     |                     |
+      ---------------------
+               |
+               v
+              End
+
+========================================================
+EXPLANATION:
+
+1) condition is evaluated first.
+2) If condition is true → valueIfTrue is returned.
+3) If condition is false → valueIfFalse is returned.
+4) Execution is **inline**, suitable for simple conditional assignments.
+5) Can also be **nested**, but readability decreases if overused.
+========================================================
+EXAMPLE:
+
+let score = 75;
+let result = score >= 50 ? "Pass" : "Fail";
+console.log(result);
+
+/*
+Flow:
+- Evaluate score >= 50 → true
+- Return "Pass"
+- Output: "Pass"
+
+
+
 
 
 
