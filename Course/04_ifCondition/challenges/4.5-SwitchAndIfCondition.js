@@ -1,6 +1,6 @@
 /*
 ========================================================
-📌 Difference Between switch and if (Practical Summary)
+Difference Between switch and if (Practical Summary)
 ========================================================
 
 switch:
