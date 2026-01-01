@@ -9,27 +9,28 @@ Covered Topics:
 - Change Arrays Elements
 - Check For Array Array.isArray(arr)
 ========================================================
-*/
 
-/*
+
+
 ========================================================
-ARRAY — BASIC STRUCTURE & VISUALIZATION
+** ARRAY — BASIC STRUCTURE & VISUALIZATION **
 ========================================================
 
-1- Declaration Syntax
+1- Declaration Syntax */
 
 let arrayName = [element0, element1, element2, ...];
 
+/*
 - Arrays store multiple values in **ordered sequence**.
 - Each element has a **numeric index starting from 0**.
 - Elements can be of **any type**: number, string, boolean, object, another array, etc.
 
 --------------------------------------------------------
-2- Base Structure Example
+2- Base Structure Example */
 
 let myArray = [ "A", 10, true, [1,2] ];
 
-Visualization:
+/* Visualization:
 
 myArray
   ├── [0] → "Hi"
