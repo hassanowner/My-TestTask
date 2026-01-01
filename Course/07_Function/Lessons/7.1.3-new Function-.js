@@ -1,7 +1,7 @@
 /*
-!! Note: IMPORTANT NOTE — About using `new` with Functions !!
+!! IMPORTANT NOTE - About using `new` with Functions !!
 
-* -The keyword `new` will be studied later as a separate and main topic.
+** The keyword `new` will be studied later as a separate and main topic.
 
 However, it is important at this stage to:
 - Be aware that a function can be created using `new Function()`
