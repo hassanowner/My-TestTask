@@ -25,11 +25,64 @@ This file contains:
   4) Common use cases and safety notes
 
 All examples include explanations and expected results as comments.
-*/
 
-/* =========================
-   1) Basic do/while — runs once even if condition is false
-   ========================= */
+
+========================================================
+DO...WHILE LOOP — BASIC FLOW
+========================================================
+
+Start
+  |
+  v
+[Execute Code Block]
+  |
+  v
+[Check Condition]
+  |
+  |-- True --> [Go back to Execute Code Block]
+  |
+  |-- False --> [Exit Loop]
+                  |
+                  v
+                 End
+
+========================================================
+EXPLANATION:
+
+A) Execute Code Block:
+   - The code inside the do {...} block runs **at least once**, even if the condition is false initially.
+
+B) Check Condition:
+   - After executing the block, the loop checks the condition.
+   - If true → the loop repeats the code block.
+   - If false → the loop exits.
+
+C) Repeat or Exit:
+   - Loop continues until the condition evaluates to false.
+
+========================================================
+GENERAL SYNTAX:
+
+do {
+    // Code to execute at least once
+} while (condition);
+
+- The key difference from `while`:
+  - `while` checks the condition **before** the first iteration.
+  - `do...while` checks the condition **after** the first iteration.
+- Ensures **code runs at least once** regardless of the condition.
+========================================================
+
+
+
+
+
+
+
+/* 
+=========================================================
+1) Basic do/while — runs once even if condition is false
+========================================================= */
 
 let i = 0;
 
@@ -56,9 +109,12 @@ Expected console output:
  - This proves that do/while always runs at least once.
 */
 
-/* =========================
+
+
+/*
+===========================================================
    2) Practical example — iterating an array with do/while
-   ========================= */
+=========================================================== */
 
 let products = ["Keyboard", "Mouse", "Pen"];
 let index = 0;
