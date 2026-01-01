@@ -65,7 +65,7 @@ true
 
 /*
 ==========================================================
-** DETAILED EXPLANATION: LOGICAL OPERATORS WITH STRINGS **
+**1) DETAILED EXPLANATION: LOGICAL OPERATORS WITH STRINGS **
 ==========================================================
 
 !! Note: In JavaScript, every value is internally converted to a Boolean
@@ -194,7 +194,7 @@ true
 
 /*
 ==========================================================
-** DETAILED EXPLANATION: LOGICAL OPERATORS WITH NUMBERS **
+**2) DETAILED EXPLANATION: LOGICAL OPERATORS WITH NUMBERS **
 ==========================================================
 
 !! Nite: In JavaScript, numbers are also converted to Boolean values
@@ -319,4 +319,26 @@ true
 - || returns the first truthy value
 - ! reverses the boolean value
 ========================================================
+*/
+
+
+
+/*
+========================================================================================
+TRUTHY & FALSY TABLE — STRINGS, NUMBERS, BOOLEANS, NULL, UNDEFINED
+========================================================================================
+
+| Type        | Value Example        | Boolean Conversion | !Value Result | Value || "DEFAULT" Result |
+|-------------|----------------------|--------------------|---------------|---------------------------|
+| String      | "Hello"              | true               | false         | "Hello"                   |
+| String      | "" (empty string)    | false              | true          | "DEFAULT"                 |
+| Number      | 10                   | true               | false         | 10                        |
+| Number      | -5                   | true               | false         | -5                        |
+| Number      | 0                    | false              | true          | "DEFAULT"                 |
+| Boolean     | true                 | true               | false         | true                      |
+| Boolean     | false                | false              | true          | "DEFAULT"                 |
+| Null        | null                 | false              | true          | "DEFAULT"                 |
+| Undefined   | undefined            | false              | true          | "DEFAULT"                 |
+| NaN         | NaN                  | false              | true          | "DEFAULT"                 |
+======================================================================================================
 */
