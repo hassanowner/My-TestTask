@@ -155,3 +155,41 @@ undefined
 Result:
 const works inside its block only
 */
+
+
+/*
+==============================================================
+** MULTIPLE VARIABLE DECLARATION IN ONE LINE (Using Commas) **
+==============================================================
+
+!! Note: In JavaScript, you can declare and name more than one variable
+in a single line by separating them with a comma (,).
+
+This works with:
+- var
+- let
+- const
+
+Key Points:
+- All variables share the same declaration keyword.
+- Each variable can have its own value.
+- This improves readability when variables are related.
+- With const, all variables MUST be initialized.
+
+--------------------------------------------------------
+EXAMPLE:
+--------------------------------------------------------
+*/
+
+let firstName = "Hassan", age = 25, isStudent = true;
+
+console.log(firstName);
+console.log(age);
+console.log(isStudent);
+
+/*
+Result:
+Hassan
+25
+true
+*/
