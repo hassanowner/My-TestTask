@@ -23,11 +23,67 @@ This file contains:
   4) Safety note: infinite loop and how to avoid it
 
 Each example includes short inline explanations and the expected console output as comments.
-*/
 
-/* =========================
-   1) Basic while — iterate an array
-   ========================= */
+
+========================================================
+WHILE LOOP — BASIC FLOW
+========================================================
+
+Start
+  |
+  v
+[Check Condition] <---------------------|
+  |                                     |
+  |-- True --> [Execute Code Block]     |
+  |                 |                   |
+  |                 v                   |
+  |            [Go back to Check Condition]
+  |
+  |-- False --> [Exit Loop]
+                  |
+                  v
+                 End
+
+========================================================
+EXPLANATION:
+
+A) Check Condition:
+   - The loop evaluates the condition before each iteration.
+   - If true → execute the code block inside the while loop.
+   - If false → exit the loop immediately.
+
+B) Execute Code Block:
+   - Run all statements inside the loop body.
+   - Typically includes a way to eventually make the condition false (e.g., increment/decrement a counter) to prevent infinite loops.
+
+C) Go Back:
+   - After the code block executes, the condition is checked again.
+   - This continues until the condition evaluates to false.
+
+========================================================
+GENERAL SYNTAX:
+
+while (condition) {
+    // Code to execute repeatedly
+}
+
+- condition: any expression that evaluates to true or false
+- Loop repeats **as long as condition is true**
+- Always ensure the condition can eventually become false to avoid infinite loops
+========================================================
+
+
+
+
+
+
+
+
+
+
+==================================
+1) Basic while — iterate an array
+================================== */
 
 let products = ["Keyboard", "Mouse", "Pen", "Pad", "Monitor", "iPhone"];
 
