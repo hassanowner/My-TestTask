@@ -117,10 +117,10 @@ Explanation:
 SUMMARY OF LOGICAL ASSIGNMENTS
 ========================================================
 
-| Operator | Update Condition                  | Example Result       |
-|----------|----------------------------------|--------------------|
-| ||=      | variable is falsy                 | false → value      |
-| &&=      | variable is truthy                | true → value       |
+| Operator | Update Condition                  | Example Result          |
+|----------|-----------------------------------|-------------------------|
+| ||=      | variable is falsy                 | false → value          |
+| &&=      | variable is truthy                | true → value           |
 | ??=      | variable is null or undefined     | null/undefined → value |
 
 ** Key Notes:
