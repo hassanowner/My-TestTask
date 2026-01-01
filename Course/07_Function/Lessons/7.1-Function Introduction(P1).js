@@ -9,13 +9,72 @@ In this version:
 - The goal is to make the example closer to real-world development
 ===========================================================
 
+========================================================
+FUNCTION EXPRESSION — BASIC RULE / TEMPLATE
+========================================================
+
+Syntax: */
+
+function internalFunctionName() {
+    // Code block to execute
+  conslo.log("Hello!");
+};
+
+internalFunctionName() // call fhe function 
+// Explanation:
+// - The function is called by its name 'internalFunctionName'
+// - The code inside the function block runs
+// - In this case, it prints "Hello!" to the console
+
+
+// #OR :FUNCTION EXPRESSION — BASIC RULE / TEMPLATE
+const variableName = function internalFunctionName() {
+  // Code block to execute
+  console.log("Hello!");
+};
+
+variableName()
+/*
+--------------------------------------------------------
+Key Points:
+
+A) variableName
+- The **external variable** used to call the function.
+- Mandatory if you want to store the function.
+- Example of usage: variableName();
+
+B) internalFunctionName
+- **Optional internal name** for the function.
+- Useful for:
+  - Debugging (appears in stack trace)
+  - Recursion (function calls itself internally)
+- Cannot be called from outside the function.
+
+C) Code block
+- The statements inside `{ }` execute when function is called via `variableName`.
+- Internal name can be used inside for recursion if needed.
+
+--------------------------------------------------------
+Flow / Execution:
+
+1) Define Function Expression → store function object in variableName
+2) Call function via variableName() → executes code block
+3) Optionally, use internalFunctionName inside the block
+
+========================================================
+
+
+
+
+
+
 -----------------------------------------------------------
-Practical Example (Using Programming Terminology)
+Practical Example
 -----------------------------------------------------------
 */
 
 // User-defined function
-function showWelcomeMessage(userRole) {
+function showWelcomeMessage(userRole) { //send `userRole`
   console.log(`Welcome, ${userRole}`);
   // Prints a welcome message based on the system role
 }
