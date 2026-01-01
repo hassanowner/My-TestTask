@@ -180,92 +180,6 @@ IMPORTANT CONCEPTUAL NOTES
 
 ================================================================================
 */
-// #OR :
-    
-/* 
-================================================================================
-ARGUMENT FLOW — OFFICIAL PROGRAMMING DIAGRAM
-================================================================================
-
-                ┌───────────────────────────────┐
-                │         FUNCTION CALL           │
-                └───────────────────────────────┘
-                                |
-                                v
-        ┌────────────────────────────────────────────┐
-        │ sendEmail("user@mail.com", "Welcome")       │
-        │                                            │
-        │ "user@mail.com"  → Argument #1              │
-        │ "Welcome"        → Argument #2              │
-        └───────────────┬────────────────────────────┘
-                        |
-                        v
-        ┌────────────────────────────────────────────┐
-        │      ARGUMENT TRANSMISSION PHASE            │
-        │────────────────────────────────────────────│
-        │ Arguments are sent in ORDER                 │
-        │ Position determines assignment              │
-        │                                            │
-        │ Argument[0] → First parameter               │
-        │ Argument[1] → Second parameter              │
-        └───────────────┬────────────────────────────┘
-                        |
-                        v
-        ┌────────────────────────────────────────────┐
-        │   PARAMETER RECEPTION (Function Entry)     │
-        │────────────────────────────────────────────│
-        │ function sendEmail(emailAddress, message)  │
-        │                                            │
-        │ emailAddress = "user@mail.com"              │
-        │ message      = "Welcome"                    │
-        └───────────────┬────────────────────────────┘
-                        |
-                        v
-        ┌────────────────────────────────────────────┐
-        │     ARGUMENT → LOCAL VARIABLE CONVERSION    │
-        │────────────────────────────────────────────│
-        │ Parameters become local variables           │
-        │                                            │
-        │ emailAddress (local)                        │
-        │ message (local)                             │
-        └───────────────┬────────────────────────────┘
-                        |
-                        v
-        ┌────────────────────────────────────────────┐
-        │        FUNCTION BODY USAGE                  │
-        │────────────────────────────────────────────│
-        │ console.log(                                │
-        │   "Email sent to " + emailAddress           │
-        │ );                                         │
-        └────────────────────────────────────────────┘
-                        |
-                        v
-                ┌───────────────────────────────┐
-                │        FUNCTION END             │
-                └───────────────────────────────┘
-
-================================================================================
-KEY TECHNICAL DEFINITIONS
-================================================================================
-- Argument:
-  Actual value passed when calling a function
-
-- Parameters:
-  Named variables that receive arguments
-
-- Argument Order:
-  Arguments are matched by POSITION, not by name
-
-================================================================================
-IMPORTANT RULES ABOUT ARGUMENTS
-================================================================================
-- Arguments exist only at call time
-- Parameters store argument values locally
-- Missing arguments become undefined
-- Extra arguments are ignored unless handled
-- Arguments are passed by value (primitives)
-
-================================================================================
 
 
 
@@ -274,6 +188,7 @@ IMPORTANT RULES ABOUT ARGUMENTS
 
 
 
+/*
 -----------------------------------------------------------
 Practical Example
 -----------------------------------------------------------
