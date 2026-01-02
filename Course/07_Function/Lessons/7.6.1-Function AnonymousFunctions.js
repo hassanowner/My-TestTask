@@ -165,6 +165,12 @@ function executeOperation(operation) {
 
 executeOperation( anonymousFunction )
 // anonymousFunction = function () {  console.log("Operation Executed Successfully");  };
+   
+// You can verify this by adding:
+// console.log(typeof operation);
+// inside the executeOperation function.
+// It will show "function", confirming that the parameter is indeed a function.
+   
 /* ----------------------------------------------------/*
 
 
@@ -206,11 +212,6 @@ executeOperation Scope
 | operation ───────────────► anonymousFunction
 ----------------------------------------------------
  [ operation = anonymousFunction ]
-
-// You can verify this by adding:
-// console.log(typeof operation);
-// inside the executeOperation function.
-// It will show "function", confirming that the parameter is indeed a function.
 
 
 
