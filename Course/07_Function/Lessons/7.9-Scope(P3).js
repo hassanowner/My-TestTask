@@ -94,9 +94,9 @@ Why "b" Is Not Available in child()
 - Scope search goes UP, NOT DOWN
 
 This is VERY important:
-Parent can access child? ❌
-Child can access parent? ✅
-Sibling scopes cannot see each other ✅
+Parent can access child? - No
+Child can access parent? - Yes
+Sibling scopes cannot see each other - Yes
 */
 
 
