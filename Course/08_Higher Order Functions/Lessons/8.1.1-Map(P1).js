@@ -152,11 +152,11 @@ Result:
 
 /*
 - map():
-  ✅ Returns a NEW array
-  ✅ Does NOT modify original array
-  ✅ Always same length as original
-  ❌ Not used for filtering
-  ❌ Not used for side effects
+  - Returns a NEW array
+  - Does NOT modify original array
+  - Always same length as original
+  - Not used for filtering
+  - Not used for side effects
 */
 
 
