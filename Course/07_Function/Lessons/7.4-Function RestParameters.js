@@ -82,8 +82,15 @@ Explanation:
 │                                                                                            │
 │                        Function Declaration                                                │
 └──────────────────────────────────────────────────────────────────────────────┘
+- Simple Example:
 */
-
+function showData(name, age, country, ...rest) {
+  console.log(name);    // "Ali"
+  console.log(age);     // 25
+  console.log(country); // "Iraq"
+  console.log(rest);    // ["Baghdad", "Developer"] -> array
+  console.log(rest[0]); // "Baghdad" 
+  }
 
 
 
