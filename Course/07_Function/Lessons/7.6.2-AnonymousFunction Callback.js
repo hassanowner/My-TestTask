@@ -44,6 +44,19 @@ executeOperation(function () {
 │                                  └──────────────────────────┘     │
 │                                                                        │
 └─────────────────────────────────────────────────────────────┘
+function executeOperation(operation) {
+  operation();                ^  │
+}                            1│  │
+                              │  │2
+                              │  V
+ //      executeOperation(function () { console.log("Operation Executed Successfully");  }); 
+ 
+ // 1. The `anonymousfunction` is sent to the `operation`
+ // then --> [operation = anonymousfunction]
+ // 2. operation() = anonymousfunction = console.log("Operation Executed Successfully")
+
+
+
 
 
 2. Call Stack Animation
