@@ -250,7 +250,11 @@ Call Stack
 END OF EXECUTION FLOW
 ====================================================
 */
-
+   
+/*
+!! Important NOTE:
+This topic (Passing and Executing Anonymous Functions) 
+will be studied in detail in Lesson 7.6.2   */
 
 
 
