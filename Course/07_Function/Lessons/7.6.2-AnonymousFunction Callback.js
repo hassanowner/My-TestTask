@@ -4,9 +4,18 @@ JavaScript Execution Flow - Anonymous Function Callback
 - Visual Step-by-Step Guide 
 
 
+ [ Source Code ] */ 
 
+function executeOperation(operation) {
+  operation();
+}
 
-## Detailed Component Breakdown
+executeOperation(function () {
+  console.log("Operation Executed Successfully");
+}); 
+/*
+
+## Detailed Component Breakdown ##
 
 1. Memory Reference Diagram
 
