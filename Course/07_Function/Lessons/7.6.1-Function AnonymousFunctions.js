@@ -152,6 +152,9 @@ executeOperation(function () { // --> Anonymous function
 ====================================================
 BEHIND THE SCENES — EXECUTION FLOW DIAGRAM
 ====================================================
+!! Important NOTE:
+This topic (Passing and Executing Anonymous Functions) 
+will be studied in detail in Lesson 7.6.2  
 
 
 [ SOURCE CODE ]
@@ -202,8 +205,16 @@ executeOperation Scope
 
 | operation ───────────────► anonymousFunction
 ----------------------------------------------------
+ [ operation = anonymousFunction ]
+
+// You can verify this by adding:
+// console.log(typeof operation);
+// inside the executeOperation function.
+// It will show "function", confirming that the parameter is indeed a function.
 
 
+
+/*
 STEP 5 — CALL STACK (EXECUTION START)
 ----------------------------------------------------
 Call Stack (Top → Bottom)
@@ -251,11 +262,6 @@ END OF EXECUTION FLOW
 ====================================================
 */
    
-/*
-!! Important NOTE:
-This topic (Passing and Executing Anonymous Functions) 
-will be studied in detail in Lesson 7.6.2   */
-
 
 
 
