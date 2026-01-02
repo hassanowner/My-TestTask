@@ -56,11 +56,25 @@ function executeOperation(operation) {
  // then --> [operation = anonymousfunction]
  // 2. operation() = anonymousfunction = console.log("Operation Executed Successfully")
 
+/*
+You can verify this by adding:
+console.log(typeof operation);
+inside the executeOperation function.
+It will show "function", confirming that the parameter is indeed a function.
+
+// Code:
+function executeOperation(operation) {
+  console.log(typeof operation);
+}
+
+executeOperation(function () {
+  console.log("Operation Executed Successfully");
+}); 
+*/
 
 
 
-
-
+/*
 2. Call Stack Animation
 
 
