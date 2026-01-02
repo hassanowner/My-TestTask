@@ -44,6 +44,7 @@ executeOperation(function () {
 │                                  └──────────────────────────┘     │
 │                                                                        │
 └─────────────────────────────────────────────────────────────┘
+
 function executeOperation(operation) {
   operation();                ^  │
 }                            1│  │
@@ -54,6 +55,7 @@ function executeOperation(operation) {
  // 1. The `anonymousfunction` is sent to the `operation`
  // then --> [operation = anonymousfunction]
  // 2. operation() = anonymousfunction = console.log("Operation Executed Successfully")
+
 
 
 
