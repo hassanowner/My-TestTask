@@ -231,3 +231,4 @@ Learning Points for Beginners:
 6. Callback Pattern - Passing a function to be "called back" later
 
 This visualization shows how JavaScript manages memory, execution order, and function references when working with callbacks!
+*/
