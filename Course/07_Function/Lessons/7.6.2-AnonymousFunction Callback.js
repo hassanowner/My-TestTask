@@ -1,14 +1,14 @@
 /*
 JavaScript Execution Flow - Anonymous Function Callback
 
-Visual Step-by-Step Guide 
+- Visual Step-by-Step Guide 
 
----
 
-Detailed Component Breakdown
+
+
+## Detailed Component Breakdown
 
 1. Memory Reference Diagram
-
 
 ┌─────────────────────────────────────────────────────────────┐
 │                    GLOBAL EXECUTION CONTEXT                            │
@@ -220,7 +220,6 @@ TIME  T0 (Parse)     T1 (Call)          T2 (Execute)        T3 (Cleanup)
                                            └──────┘
 
 
----
 
 Learning Points for Beginners:
 
