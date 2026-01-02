@@ -65,10 +65,10 @@ function buildGreeting(firstName, lastName) {
   return createMessage();
 }
 
-console.log(buildGreeting("Osama", "Mohamed"));
+console.log(buildGreeting("Ali", "Mohamed"));
 /*
 Result:
-Hello Osama Mohamed
+Hello Ali Mohamed
 */
 
 /*
@@ -106,7 +106,7 @@ function buildGreeting(firstName, lastName) {
 console.log(buildGreeting("Osama", "Mohamed"));
 /*
 Result:
-Hello Osama Mohamed
+Hello Ali Mohamed
 */
 
 /*
