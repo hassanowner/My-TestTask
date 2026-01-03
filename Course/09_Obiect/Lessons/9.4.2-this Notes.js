@@ -74,12 +74,14 @@ console.log(getNameAdvanced());       // Output: "global name"
 console.log(artist1.getName());       // Output: "Bob"
 console.log(artist2.getName());       // Output: "Jimi"
 
+
 /*
 
 ##1_ IF:  */
 
 var name = "global name";
-function getNameAdvanced() { return this.name; }
+function getNameAdvanced() { 
+  return this.name; }
 
 const artist1 = {
   name: 'Kyuss',
@@ -101,12 +103,14 @@ console.log(typeof artist2.getName);  // Output: string
 console.log(artist2.getName);         // Output: "global name"
 
 
+
 /*
 
 ##2_ In Our Example:  */
 
 var name = "global name";
-function getNameAdvanced() { return this.name; }
+function getNameAdvanced() {
+  return this.name; }
 
 const artist1 = {
   name: 'Bob',
@@ -118,13 +122,40 @@ const artist2 = {
 };
 
 console.log(getNameAdvanced());        // Output: "global name"
+
 console.log(typeof artist1.getName);   // Output: "function" 
 console.log(artist1.getName());        // Output: "Bob"
 
-console.log(typeof artist2.getName()); // Output: "function"
+console.log(typeof artist2.getName);   // Output: "function"
 console.log(artist2.getName());        // Output: "Jimi"
 
+/*
+# What happens and why do these different results occur? 
+- Note the steps in detail here:       
 
+1- In `console.log(getNameAdvanced())`, You call the function, and since the function returns this value to you,
+   it saves it, so its value appears as such.
+   
+2- This assigns the existing function 'getNameAdvanced' to the property 'getName' of the object.
+3- It does NOT call the function; it just stores a reference.
+4- It's just like: */
+var name = "global name";
+function getNameAdvanced() { return this.name; }
+const artist1 = {
+  name: 'Bob', 
+  getName: function getNameAdvanced() { return this.name; } /*
+* but without call it, it's just a function *
+
+5- So you can notice (typeof artist1.getName) --> "function"
+6- When called as artist1.getName(), 'this' refers to the object (artist1), so this.name → "Bob".
+7- To verify what I am saying, you can observe when working ` typeof artist1.getName() `
+   the result must be a string because it stores the return value from the function ( you use callfunction`getName()` ), 
+   and the return value is only the name.
+   
+8- This allows the same function to be reused by multiple objects (e.g., artist2).
+
+
+*/
 
 
 
