@@ -89,6 +89,56 @@ console.log(developerAccount.canAccessDashboard());
 // true
 
 
+
+
+/*
+Note: You can use the Array approach instead of an Object to represent data in JavaScript. 
+The idea is to use an array of [key, value] pairs for each property, and then convert it into an object using Object.fromEntries. 
+
+// ============================
+// Array of key-value pairs
+// ============================ */
+const userArray = [
+  ['username', 'fullstack_dev'], // [key, value]
+  ['role', 'Fullstack Engineer'],
+  ['experienceYears', 4],
+  ['isActive', true],
+  ['displayInfo', function() {
+    console.log(`${this.username} | ${this.role} | ${this.experienceYears} years | Active: ${this.isActive}`);
+  }]
+];
+
+// ============================
+// Convert Array to Object
+// ============================
+const user = Object.fromEntries(userArray); 
+// This converts the array of [key, value] pairs (userArray) into a regular object (user),
+// so that each key in the array becomes a property of the object,
+// and you can access them like: user.propertyName
+
+// ============================
+// Accessing Properties
+// ============================
+console.log(user.username);        // "fullstack_dev"
+console.log(user.role);            // "Fullstack Engineer"
+console.log(user.experienceYears); // 4
+console.log(user.isActive);        // true
+
+// ============================
+// Call the method
+// ============================
+user.displayInfo(); // "fullstack_dev | Fullstack Engineer | 4 years | Active: true"
+/*
+You can then access properties and methods just like a regular object:
+console.log(obj.propertyName1);
+obj.methodName();
+
+
+
+
+
+
+
 // ==================================================
 // Explanation Summary
 // ==================================================
@@ -122,8 +172,9 @@ developerAccount.getProfileSummary()
 Object         → Developer Account
 Properties     → Account Data
 Methods        → Account Actions
-*/
+
 
 ====================================================
 End of Educational Object Example
 ====================================================
+  */
