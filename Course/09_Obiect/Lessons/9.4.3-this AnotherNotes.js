@@ -17,7 +17,6 @@ console.log(globalFunction());
 // Output (strict mode): undefined
 
 
-
 // -------------------------------------------------------------
 
 // 2) Object method call
@@ -34,7 +33,6 @@ console.log(person.getName());
 // Output: "Alice"
 
 // -------------------------------------------------------------
-
 
 
 // 3) Constructor function call
@@ -55,7 +53,6 @@ console.log(jimi.name);
 // Output: "Jimi"
 
 // -------------------------------------------------------------
-
 
 /* Summary:
 1. Global function call → `this` = global object (or undefined in strict mode)
