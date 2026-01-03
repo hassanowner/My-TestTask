@@ -76,6 +76,7 @@ console.log(artist2.getName());       // Output: "Jimi"
 
 
 /*
+# But What happened ?
 
 ##1_ IF:  */
 
@@ -142,12 +143,13 @@ console.log(artist2.getName());        // Output: "Jimi"
 var name = "global name";
 function getNameAdvanced() { return this.name; }
 const artist1 = {
-  name: 'Bob', 
-  getName: function getNameAdvanced() { return this.name; } /*
-* but without call it, it's just a function *
+   name: 'Bob', 
+// getName: getNameAdvanced   // is a same this
+   getName: function getNameAdvanced() { return this.name; } /*
+* but without call it , it's just a function *
 
-5- So you can notice (typeof artist1.getName) --> "function"
-6- When called as artist1.getName(), 'this' refers to the object (artist1), so this.name → "Bob".
+5- So you can notice */ (typeof artist1.getName) /* --> "function"
+6- When called as artist1.getName() 'this' refers to the object (artist1), so this.name → "Bob".
 7- To verify what I am saying, you can observe when working ` typeof artist1.getName() `
    the result must be a string because it stores the return value from the function ( you use callfunction`getName()` ), 
    and the return value is only the name.
@@ -155,14 +157,10 @@ const artist1 = {
 8- This allows the same function to be reused by multiple objects (e.g., artist2).
 
 
-*/
 
 
+## And you can benefit from this summary :
 
-
-
-
-/*
 Global Context
 --------------
 this (global object)
@@ -191,8 +189,6 @@ artist2
 Calling artist2.getName():
 this ---> artist2
 this.name ---> "Jimi"
-
-
 
 
 
