@@ -96,6 +96,7 @@ console.log(user.country);
 // Result:
 // undefined
 
+
 /* -------------------------
    6) Object inspection helpers
    ------------------------- */
@@ -111,6 +112,7 @@ console.log(Object.entries(user));
 // Example Result:
 // [["age",38],["sayHello",function],["job","Frontend Developer"]]
 
+
 /* -------------------------
    7) Merge objects with Object.assign
    ------------------------- */
@@ -121,6 +123,8 @@ let merged = Object.assign({}, defaults, user, extra);
 console.log(merged);
 // Example Result:
 // { age: 38, language: "en", sayHello: [Function], job: "Frontend Developer", hobby: "photography" }
+
+
 
 /* -------------------------
    8) Make object immutable with Object.freeze
@@ -136,12 +140,14 @@ console.log(config);
 // Result:
 // { mode: "dev", version: 1 }
 
+
 /* -------------------------
    9) When to use new Object() vs object literal {}
    -------------------------
    - Prefer object literal {}
    - new Object() works but is rarely used in modern code
    ------------------------- */
+
 
 /* -------------------------
    10) Small Practical Example
