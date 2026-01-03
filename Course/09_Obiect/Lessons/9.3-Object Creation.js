@@ -18,6 +18,7 @@ console.log(user);
 // Result:
 // { age: 20 }
 
+
 /* -------------------------
    2) Read & write properties (dot + bracket)
    ------------------------- */
@@ -30,6 +31,12 @@ user["country"] = "Egypt";
 console.log(user.country);
 // Result:
 // Egypt
+/*
+user = {
+    age: 38,
+    country: "Egypt"
+}
+/*
 
 /* -------------------------
    3) Add a method (function) to the object
@@ -41,6 +48,15 @@ user.sayHello = function () {
 console.log(user.sayHello());
 // Result:
 // Hello from Egypt - age: 38
+/*
+user = {
+    age: 38,
+    country: "Egypt",
+    sayHello: function() {
+        return `Hello from ${this.country} - age: ${this.age}`;
+    }
+}
+*/
 
 /* -------------------------
    4) Dynamic property names
@@ -50,6 +66,23 @@ user[propName] = "Frontend Developer";
 console.log(user.job);
 // Result:
 // Frontend Developer
+/*
+## IF: 
+let propName = "job";
+user["propName"] = "Frontend Developer"; --> propName: "Frontend Developer"
+user[propName] = "Frontend Developer"; --> user[propName = job] --> job: "Frontend Developer"
+
+user = {
+    age: 38,
+    country: "Egletypt",
+    sayHello: function() {
+        return `Hello from ${this.country} - age: ${this.age}`;
+    },
+    job: "Frontend Developer"
+}
+*/
+
+
 
 /* -------------------------
    5) Delete a property
