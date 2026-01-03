@@ -76,7 +76,7 @@ console.log(artist2.getName());       // Output: "Jimi"
 
 
 /*
-# But What happened ?
+# But What happened ? 
 
 ##1_ IF:  */
 
@@ -161,6 +161,23 @@ const artist1 = {
 
 ## And you can benefit from this summary :
 
+Global
+├── getNameGlobal (function)
+├── person → {name: 'James', getName: function}
+└── artist → {name: 'Kyuss', getName: function}
+
+person.getName() call:
+├── this = person object
+├── this.name = 'James'
+└── this.getName = function
+
+artist.getName() call:
+├── this = artist object
+├── this.name = 'Kyuss'
+└── this.getName = function
+
+
+
 Global Context
 --------------
 this (global object)
@@ -189,8 +206,6 @@ artist2
 Calling artist2.getName():
 this ---> artist2
 this.name ---> "Jimi"
-
-
 
 
 // ===========================
