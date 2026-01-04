@@ -30,10 +30,10 @@ function buildGreeting(firstName, lastName) {
   return message; // Return final value
 }
 
-console.log(buildGreeting("Osama", "Mohamed"));
+console.log(buildGreeting("Ali", "Mohamed"));
 /*
 Result:
-Hello Osama Mohamed
+Hello Ali Mohamed
 */
 
 /*
