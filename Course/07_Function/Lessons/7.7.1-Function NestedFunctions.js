@@ -103,7 +103,7 @@ function buildGreeting(firstName, lastName) {
   return createMessage();
 }
 
-console.log(buildGreeting("Osama", "Mohamed"));
+console.log(buildGreeting("Ali", "Mohamed"));
 /*
 Result:
 Hello Ali Mohamed
