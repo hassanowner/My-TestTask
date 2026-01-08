@@ -12,6 +12,7 @@
 // Topics **9.5.2 (Object.create & Prototypes)** and **9.5.3 (Object Property Descriptors)**
 // will also be studied later in the **OOP (Object-Oriented Programming)** section, 
 // so there is no need to worry if they are not directly linked to the basics right now.
+
 /* =====================================================
    1) WHAT IS Object.create() ?
 -----------------------------------------------------
