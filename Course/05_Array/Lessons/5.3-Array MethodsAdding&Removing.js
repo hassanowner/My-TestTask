@@ -91,4 +91,70 @@ console.log(`Last Employee Removed: ${lastEmployee}`);
 /*
 Result:
 "Last Employee Removed: Consultant"
+
+
+
+========================================================
+Array Methods [Adding and Removing] - Text Summary
+========================================================
+
+Summary:
+
+1. Original Array:
+   ["Ali", "Omar", "Hassan", "Salem"]
+
+2. unshift():
+   - Adds elements to the beginning of the array.
+   - Example: Adding "Manager" and "Supervisor" moves them to the start.
+
+3. push():
+   - Adds elements to the end of the array.
+   - Example: Adding "Intern" and "Consultant" places them at the end.
+
+4. shift():
+   - Removes the first element of the array.
+   - Example: "Manager" is removed, other elements shift left.
+
+5. pop():
+   - Removes the last element of the array.
+   - Example: "Consultant" is removed, other elements stay in place.
+
+
+
+==========================
+|  Array Methods Demo   |
+==========================
+
+Initial Array (Original):
++-------+-------+-------+-------+
+| Ali   | Omar  | Hassan| Salem |
++-------+-------+-------+-------+
+  [0]     [1]     [2]     [3]
+
+----------------------------------------------------------
+After unshift("Manager", "Supervisor"):
++---------+-----------+-------+-------+-------+-------+
+| Manager | Supervisor| Ali   | Omar  | Hassan| Salem |
++---------+-----------+-------+-------+-------+-------+
+   [0]       [1]       [2]     [3]     [4]     [5]
+----------------------------------------------------------
+After push("Intern", "Consultant"):
++---------+-----------+-------+-------+-------+-------+--------+-----------+
+| Manager | Supervisor| Ali   | Omar  | Hassan| Salem | Intern | Consultant|
++---------+-----------+-------+-------+-------+-------+--------+-----------+
+   [0]       [1]       [2]     [3]     [4]     [5]     [6]        [7]
+----------------------------------------------------------
+After shift():
++-----------+-------+-------+-------+-------+--------+-----------+
+| Supervisor| Ali   | Omar  | Hassan| Salem | Intern | Consultant|
++-----------+-------+-------+-------+-------+--------+-----------+
+    [0]       [1]     [2]     [3]     [4]      [5]        [6]
+Removed First: Manager
+----------------------------------------------------------
+After pop():
++-----------+-------+-------+-------+-------+--------+
+| Supervisor| Ali   | Omar  | Hassan| Salem | Intern |
++-----------+-------+-------+-------+-------+--------+
+    [0]       [1]     [2]     [3]     [4]      [5]
+Removed Last: Consultant
 */
