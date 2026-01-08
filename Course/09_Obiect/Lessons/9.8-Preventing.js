@@ -64,6 +64,9 @@ Object.preventExtensions(john); // prevent adding new properties
 
 console.log(Object.isExtensible(john)); // false
 
+john.firstName = 'James'; // ✔ Allowed: changing values
+console.log(john.firstName); // James
+
 
 /*
 --------------------------------------------------------
@@ -100,6 +103,8 @@ console.log(Object.isSealed(john));     // true
 
 john.firstName = 'James'; // permitted: change existing property
 console.log(john.firstName); // "James"
+
+delete john.lastName; // Error: Properties cannot be deleted
 
 console.log(Object.getOwnPropertyDescriptor(john, 'firstName').enumerable); // true
 
