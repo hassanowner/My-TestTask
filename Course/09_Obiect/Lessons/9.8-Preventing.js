@@ -49,8 +49,16 @@ Object.isExtensible(object)
 BENEFIT:
 ✔ Stops uncontrolled object growth
 ✔ Keeps object structure stable
+*/
 
+const john = { firstName: 'John', lastName: 'Doe' }
+  console.log(Object.isExtensible(john)); //true
+john.age = 44; // define new property
+console.log(john.age); // 44 
+Object.preventExtensions(john); // prevent extensions 
+console.log(Object.isExtensible(john)); // false
 
+/*
 --------------------------------------------------------
 2) Object.seal(object)
 --------------------------------------------------------
@@ -67,7 +75,27 @@ BENEFIT:
 ✔ Locks object structure
 ✔ Allows controlled value updates
 
+SEALING OBJECTS EXAMPLE : */
+const john = { firstName: 'John', lastName: 'Doe' };
 
+console.log(Object.isExtensible(john)); // true
+console.log(Object.isSealed(john));     // false
+
+john.age = 44; // define new property
+console.log(john.age); // 44
+
+Object.seal(john); // seal the object
+
+console.log(Object.isExtensible(john)); // false
+console.log(Object.isSealed(john));     // true
+
+john.firstName = 'James'; // permitted: change existing property
+console.log(john.firstName); // "James"
+
+console.log(Object.getOwnPropertyDescriptor(john, 'firstName').enumerable); // true
+
+
+/*
 --------------------------------------------------------
 3) Object.freeze(object)
 --------------------------------------------------------
@@ -84,9 +112,29 @@ BENEFIT:
 ✔ Full immutability
 ✔ Ideal for constants and configuration objects
 
+FREEZING OBJECTS EXAMPLE: */
+
+const john = { firstName: 'John', lastName: 'Doe' };
+
+console.log(Object.isExtensible(john)); // true
+console.log(Object.isSealed(john));     // false
+console.log(Object.isFrozen(john));     // false
+
+john.age = 44; // new property
+console.log(john.age); // 44
+
+Object.freeze(john); // freeze the object
+
+console.log(Object.isExtensible(john)); // false
+console.log(Object.isSealed(john));     // true
+console.log(Object.isFrozen(john));     // true
+
+john.firstName = 'James'; 
+// TypeError: Cannot assign to read-only property 'firstName' of #<Object>
 
 
 
+/*
 3) SIMPLE EXAMPLE — BASIC RULE
 -------------------------------------------------------------------- */
 const user = { name: "John" };
