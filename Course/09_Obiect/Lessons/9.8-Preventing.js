@@ -51,12 +51,19 @@ BENEFIT:
 ✔ Keeps object structure stable
 */
 
-const john = { firstName: 'John', lastName: 'Doe' }
-  console.log(Object.isExtensible(john)); //true
+// CHECKING OBJECT EXTENSIBILITY (Object.isExtensible & Object.preventExtensions)
+
+const john = { firstName: 'John', lastName: 'Doe' };
+
+console.log(Object.isExtensible(john)); // true
+
 john.age = 44; // define new property
-console.log(john.age); // 44 
-Object.preventExtensions(john); // prevent extensions 
+console.log(john.age); // 44
+
+Object.preventExtensions(john); // prevent adding new properties
+
 console.log(Object.isExtensible(john)); // false
+
 
 /*
 --------------------------------------------------------
@@ -74,8 +81,10 @@ Object.isSealed(object)
 BENEFIT:
 ✔ Locks object structure
 ✔ Allows controlled value updates
+*/
 
-SEALING OBJECTS EXAMPLE : */
+// SEALING OBJECTS EXAMPLE: 
+
 const john = { firstName: 'John', lastName: 'Doe' };
 
 console.log(Object.isExtensible(john)); // true
