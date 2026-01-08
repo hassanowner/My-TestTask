@@ -39,7 +39,7 @@ BENEFITS:
 ✔ Essential for real-world applications
 
 
-③ SIMPLE EXAMPLE — BASIC RULE
+3) SIMPLE EXAMPLE — BASIC RULE
 -------------------------------------------------------------------- */
 const person = {};
 
@@ -51,6 +51,8 @@ console.log(person.age);  // 30
 
 // RULE:
 // → Objects can receive new properties after creation.
+
+
 
 /*
 4) THREE EXAMPLES (SIMPLE → INTERMEDIATE → ADVANCED)
