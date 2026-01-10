@@ -1,4 +1,12 @@
-/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM — Dealing With Children Nodes & Elements</title>
+</head>
+<body>
+
+<!--
 ====================================================================
 TOPIC: DOM — Dealing With Children Nodes & Elements
 ====================================================================
@@ -11,17 +19,16 @@ TABLE OF CONTENTS (ORDER BASED ON CODE)
 5) firstChild & lastChild
 6) firstElementChild & lastElementChild
 ====================================================================
-*/
+-->
 
-
-/*
+<!--
 ====================================================================
 1) HTML STRUCTURE (IMPORTANT FOR UNDERSTANDING THE DIFFERENCES)
 ====================================================================
 - This structure contains:
   • Elements
   • Text nodes (spaces & line breaks)
-  • Comments
+  • Comments -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,13 +51,26 @@ TABLE OF CONTENTS (ORDER BASED ON CODE)
 </body>
 </html>
 
-NOTE:
+<!--NOTE:
 - The HTML above is commented because this is a JavaScript-only file.
 - Node differences depend heavily on spaces, comments, and line breaks.
 ====================================================================
-*/
+-->
 
+<div id="container">
+  
+  <!-- This is a comment node -->
 
+  <h2>Heading One</h2>
+  Text Between Elements
+  <p>Paragraph One</p>
+
+</div>
+
+<script>
+
+  
+  
 /*
 ====================================================================
 2) Selecting the Element
@@ -184,3 +204,7 @@ BEST PRACTICE:
 - Use *Element* versions when working with layout & logic
 ====================================================================
 */
+</script>
+
+</body>
+</html>
