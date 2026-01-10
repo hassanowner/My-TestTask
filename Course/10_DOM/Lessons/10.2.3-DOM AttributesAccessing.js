@@ -274,6 +274,32 @@ console.log(element.getAttribute('class')); // null
 console.log(element.getAttribute('href'));  // null
 
 
+
+// Another Example:
+element.removeAttribute(attributeName);
+
+// Example Implementation
+const element = document.getElementById('home');
+
+// Remove specific attributes
+element.removeAttribute('class');  // Removes class attribute entirely
+element.removeAttribute('href');   // Removes href attribute entirely
+
+// Verification - returns null for removed attributes
+console.log(element.getAttribute('class'));  // null
+console.log(element.getAttribute('href'));   // null
+
+// The element still exists, just without those attributes
+console.log(element.id);  // 'home' (id wasn't removed)
+
+// Practical use case - toggling an attribute
+if (element.hasAttribute('disabled')) {
+    element.removeAttribute('disabled');
+} else {
+    element.setAttribute('disabled', 'true');
+}
+
+
 /*
 ====================================================================
 SUMMARY
