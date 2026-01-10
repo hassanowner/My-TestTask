@@ -120,6 +120,40 @@ Attributes can also be changed using properties: */
 element.className, element.href, element.target
 
 
+
+// Another example:
+
+element.setAttribute(attributeName, attributeValue);
+
+// Example Implementation
+const element = document.getElementById('home');
+
+// Modifying existing attributes
+element.setAttribute('class', 'link active');  // Updates class attribute
+element.setAttribute('href', 'newlink.html');  // Updates href attribute
+
+// Adding new attributes
+element.setAttribute('target', '_blank');      // Adds target attribute
+element.setAttribute('data-active', 'true');   // Adds custom data attribute
+
+// Verification
+console.log(element.getAttribute('class'));    // 'link active'
+console.log(element.getAttribute('href'));     // 'newlink.html'
+console.log(element.getAttribute('target'));   // '_blank'
+console.log(element.getAttribute('data-active')); // 'true'
+
+// Alternative property-based approach
+element.className = 'link active highlighted';  // Updates via DOM property
+element.href = 'anotherLink.html';              // Updates via DOM property
+element.target = '_self';                       // Updates via DOM property
+
+//Important Considerations
+
+// While setAttribute() is universal, some attributes have corresponding DOM properties that may be more efficient or appropriate for certain use cases.
+// For example, element.className or element.classList for classes, and element.style for CSS styles.
+
+
+
 /*
 ====================================================================
 3) CREATING ATTRIBUTE NODES USING createAttribute()
