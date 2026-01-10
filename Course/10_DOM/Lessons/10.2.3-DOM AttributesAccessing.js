@@ -121,7 +121,7 @@ element.className, element.href, element.target
 
 
 
-// Another example:
+// Another Example:
 
 element.setAttribute(attributeName, attributeValue);
 
@@ -199,6 +199,36 @@ attribute.value = '_blank';
 element.setAttributeNode(attribute);
 
 console.log(element.getAttribute('target')); // _blank
+
+
+
+// Another Example:
+
+const attributeNode = document.createAttribute(attributeName);
+attributeNode.value = attributeValue;
+element.setAttributeNode(attributeNode);
+
+// Example Implementation
+const element = document.getElementById('home');
+
+// Create a new attribute node
+const targetAttribute = document.createAttribute('target');
+
+// Set the attribute value
+targetAttribute.value = '_blank';
+
+// Attach the attribute node to the element
+element.setAttributeNode(targetAttribute);
+
+// Verification
+console.log(element.getAttribute('target'));  // '_blank'
+
+// The attribute node can be manipulated before attachment
+const dataAttribute = document.createAttribute('data-custom');
+dataAttribute.value = 'customValue';
+// Additional manipulation could occur here
+element.setAttributeNode(dataAttribute);
+
 
 
 /*
