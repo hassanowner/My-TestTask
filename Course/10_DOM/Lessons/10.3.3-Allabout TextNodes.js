@@ -1,3 +1,43 @@
+// ===============================
+// DOM Core Concepts - Basics
+// ===============================
+
+// 1. Property: textContent
+// Usage example:
+const element1 = document.createElement('p');
+element1.textContent = "Hello World";
+
+// 2. Property: nodeValue
+const textNode = document.createTextNode("Hello Node");
+console.log(textNode.nodeValue); // "Hello Node"
+
+// 3. Property: innerHTML
+const div = document.createElement('div');
+div.innerHTML = "<strong>Bold Text</strong>";
+
+// 4. Method: createTextNode()
+const text = document.createTextNode("Sample Text");
+
+// 5. Method: createElement()
+const newDiv = document.createElement('div');
+
+// 6. Method: createAttribute()
+const attr = document.createAttribute('id');
+attr.value = 'myDiv';
+newDiv.setAttributeNode(attr);
+
+// 7. Method: appendChild()
+const parent = document.createElement('div');
+const child = document.createElement('p');
+parent.appendChild(child);
+
+// 8. Method: removeChild()
+parent.removeChild(child);
+
+
+
+
+
 1. Property: textContent
 
 · What it is: A property that gets or sets the plain text content of a node and all its descendants.
@@ -9,7 +49,23 @@
   using myDiv.textContent would return the string "Hello World". Setting 
     myDiv.textContent = "New Text"; would replace the entire contents of the div with just the text "New Text".
 
+· What it is:
+ Gets or sets the plain text inside an element, ignoring all HTML tags.
+· Example:
+  ```javascript
+  // HTML: 
+  <div id="box"> 
+    <p>Hello <strong>World</strong> </p>
+  </div>
+  let box = document.getElementById("box");
+  console.log(box.textContent); // Output: "Hello World"
+  
+  box.textContent = "New plain text"; 
+  // Now: <div id="box">New plain text</div>
+  ```     
 
+
+  
 2. Property: nodeValue
 
 · What it is: A property that gets or sets the value of a specific type of node (primarily text nodes, comment nodes, and attribute nodes).
@@ -18,6 +74,19 @@
 · Simple example: For the HTML <p id="myP">Hello</p>, the paragraph contains a text node as its child.
   myP.firstChild.nodeValue would return "Hello". Changing it with myP.firstChild.nodeValue = "Hi"; would update the text inside the paragraph to "Hi".
 
+· What it is: 
+  Gets or sets the value of text nodes, comment nodes, or attribute nodes.
+· Example:
+  ```javascript
+  // HTML:
+  <p id="para">Hello</p>
+  let para = document.getElementById("para");
+  console.log(para.firstChild.nodeValue); // Output: "Hello"
+  
+  para.firstChild.nodeValue = "Goodbye";
+  // Now: <p id="para">Goodbye</p>
+  ```
+    
 
     
 3. Property: innerHTML
@@ -29,7 +98,23 @@
   <div id="container"> <span>Item</span> </div>, container.innerHTML returns "<span>Item</span>". 
   Setting container.innerHTML = '<a href="#">Link</a>'; would remove the <span> and create a new <a> element inside the div.
 
+· What it is:
+  Gets or sets the HTML content inside an element.
+· Example:
+  ```javascript
+  // HTML: 
+  <div id="container"> 
+    <span>Old</span>
+  </div>
+  let container = document.getElementById("container");
+  console.log(container.innerHTML); // Output: "<span>Old</span>"
+  
+  container.innerHTML = "<button>Click</button>";
+  // Now: <div id="container"> <button>Click</button> </div>
+  ```
 
+
+  
   
 4. Method: createTextNode()
 
@@ -39,6 +124,14 @@
 · Simple example: This creates a text node containing the word "Welcome!".
   ```javascript
   let newText = document.createTextNode("Welcome!");
+  ```
+
+· What it is:
+  Creates a new text node.
+· Example:
+  ```javascript
+  let textNode = document.createTextNode("Welcome to my site");
+  // This creates a text node containing "Welcome to my site"
   ```
 
 
@@ -51,6 +144,14 @@
 · Simple example: This creates a new <div> element.
   ```javascript
   let newDiv = document.createElement("div");
+  ```
+
+· What it is:
+  Creates a new HTML element.
+· Example:
+  ```javascript
+  let newParagraph = document.createElement("p");
+  // Creates: <p></p> (not yet in the page)
   ```
 
 
@@ -67,6 +168,15 @@
   // Then you would use element.setAttributeNode(attr) to attach it.
   ```
 
+· What it is: 
+  Creates an attribute node (older method).
+· Example:
+  ```javascript
+  let idAttr = document.createAttribute("id");
+  idAttr.value = "main-title";
+  // Creates an id attribute with value "main-title"
+  ```
+
 
 
 7. Method: appendChild()
@@ -78,6 +188,19 @@
   ```javascript
   newDiv.appendChild(newText);
   ```
+
+· What it is: 
+  Adds a node as the last child of another node.
+· Example:
+  ```javascript
+  let div = document.getElementById("myDiv");
+  let p = document.createElement("p");
+  p.textContent = "New paragraph";
+  
+  div.appendChild(p);
+  // Adds the paragraph inside the div as its last child
+  ```
+
 
 
 
@@ -91,3 +214,41 @@
   let parent = document.getElementById("list");
   let removedNode = parent.removeChild(parent.firstChild);
   ```
+
+· What it is: 
+  Removes a child node from its parent.
+· Example:
+  ```javascript
+  let list = document.getElementById("myList");
+  let firstItem = list.firstElementChild;
+  
+  list.removeChild(firstItem);
+  // Removes the first item from the list
+  ```
+
+
+
+
+Complete working example showing all together:
+
+```javascript
+// Create a new div element
+let newDiv = document.createElement("div");
+
+// Create a class attribute for it
+let classAttr = document.createAttribute("class");
+classAttr.value = "highlight";
+newDiv.setAttributeNode(classAttr);
+
+// Create text content for the div
+let text = document.createTextNode("This is new content");
+
+// Add the text to the div
+newDiv.appendChild(text);
+
+// Add the div to the end of the body
+document.body.appendChild(newDiv);
+
+// Later, remove it
+document.body.removeChild(newDiv);
+```
