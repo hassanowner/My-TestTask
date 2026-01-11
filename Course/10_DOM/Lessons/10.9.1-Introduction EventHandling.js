@@ -25,7 +25,8 @@ Function and Purpose
 They make web pages interactive by connecting static HTML elements with dynamic JavaScript functionality.
 Common uses include input validation, button clicks, and updating UI elements.
 
-Example: Name validation
+// Example: Name validation
+
 <input type="text" onblur="validateName()">
 <div id="nameError"></div>
 */
@@ -83,11 +84,13 @@ Function and Purpose
 It simplifies simple validations like ensuring a number falls within a range, or an email is properly formatted.
 However, it is limited and cannot handle complex rules or custom messages consistently across browsers.
 
-Example:
+// Example:
+
 <input type="number" id="age" min="0" max="120" required>
 <input type="email" id="email" required>
 <input type="text" id="zipcode" pattern="[0-9]{5}" required>
 */
+
 
 
 /* =========================================================
@@ -117,6 +120,8 @@ function checkAgeNotNegative() {
 */
 
 
+
+
 /* =========================================================
 5. Event Trigger Adaptation
 
@@ -129,6 +134,7 @@ Function and Purpose
 You can choose between events like blur, change, input, click, or submit depending on how immediate or intrusive validation should be.
 
 Example: Blur vs Click
+
 <input id="age" type="number" onblur="checkAgeNotNegative()">
 <input type="submit" onclick="checkAgeNotNegative()">
 
