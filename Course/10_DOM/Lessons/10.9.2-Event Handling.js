@@ -1,6 +1,5 @@
-Introduction to JavaScript Event Handling
-
-In this comprehensive guide, we'll explore the evolution and implementation of event handling in JavaScript. We'll cover three main approaches, moving from basic to more advanced techniques:
+/*
+## Introduction to JavaScript Event Handling ##
 
 1. DOM Event Handlers - The traditional method of assigning events to element properties
 2. Anonymous Functions in Event Handling - Using inline function expressions for event handling
@@ -8,7 +7,7 @@ In this comprehensive guide, we'll explore the evolution and implementation of e
 
 Each method has its own characteristics, advantages, and use cases, which we'll examine in detail with practical examples.
 
----
+
 
 1. DOM Event Handlers
 
@@ -33,9 +32,8 @@ You select an HTML element and assign a function to one of its event properties.
 
 Basic Structure and Examples
 
-Basic Example: Button Click
+Basic Example: Button Click */
 
-```javascript
 // Get the button element
 const myButton = document.getElementById('myButton');
 
@@ -47,18 +45,18 @@ function handleClick() {
 
 // Assign the function to the onclick property
 myButton.onclick = handleClick;
-```
 
-HTML Structure (simplified)
+
+// HTML Structure (simplified)
 
 ```html
 <button id="myButton">Click Me</button>
 <div id="message"></div>
 ```
 
-Another Example: Input Field Validation
 
-```javascript
+// Another Example: Input Field Validation
+
 const emailInput = document.getElementById('email');
 
 function validateEmail() {
@@ -71,12 +69,14 @@ function validateEmail() {
 
 // Assign to onblur (when field loses focus)
 emailInput.onblur = validateEmail;
-```
 
-Important Note: When assigning the function, use just the function name without parentheses. Writing myButton.onclick = handleClick() would immediately call the function and assign its return value instead of the function itself.
 
----
+// Important Note: When assigning the function, use just the function name without parentheses. Writing myButton.onclick = handleClick() would immediately call the function and assign its return value instead of the function itself.
 
+
+
+
+/*
 2. Anonymous Functions in Event Handling
 
 What Are Anonymous Functions?
@@ -100,9 +100,8 @@ Instead of assigning a pre-defined function, you create a function expression di
 
 Basic Structure and Examples
 
-Simple Anonymous Function Example
+Simple Anonymous Function Example*/
 
-```javascript
 const myButton = document.getElementById('myButton');
 
 // Using anonymous function directly
@@ -110,11 +109,10 @@ myButton.onclick = function() {
     console.log('Anonymous function executed!');
     alert('Hello from anonymous function!');
 };
-```
 
-Wrapping Multiple Functions (Solving the DOM Handler Limitation)
+// Wrapping Multiple Functions (Solving the DOM Handler Limitation)
 
-```javascript
+
 const ageInput = document.getElementById('age');
 
 // DOM handler limitation: Only one function can be assigned
@@ -140,11 +138,9 @@ function checkNumber() {
 function formatDisplay() {
     console.log('Formatting display...');
 }
-```
 
-Accessing Event Information
+// Accessing Event Information
 
-```javascript
 const link = document.getElementById('myLink');
 
 link.onclick = function(event) {
@@ -157,11 +153,9 @@ link.onclick = function(event) {
     
     return false;
 };
-```
 
-Real-World Example: Form Field with Multiple Validations
+// Example: Form Field with Multiple Validations
 
-```javascript
 const usernameInput = document.getElementById('username');
 
 usernameInput.onblur = function() {
@@ -193,10 +187,10 @@ function clearError() {
 function updateCharacterCount(count) {
     console.log('Character count:', count);
 }
-```
 
----
 
+
+/*
 3. Event Listeners with addEventListener()
 
 What Are Event Listeners?
@@ -220,9 +214,8 @@ You call addEventListener() on an element, passing the event name (without "on")
 
 Basic Structure and Examples
 
-Basic addEventListener() Usage
+Basic addEventListener() Usage */
 
-```javascript
 const myButton = document.getElementById('myButton');
 
 function handleClick() {
@@ -231,11 +224,10 @@ function handleClick() {
 
 // Add event listener
 myButton.addEventListener('click', handleClick);
-```
 
-Multiple Listeners for Same Event
 
-```javascript
+// Multiple Listeners for Same Event
+
 const searchInput = document.getElementById('search');
 
 // First listener: Clear placeholder on focus
@@ -265,11 +257,10 @@ searchInput.addEventListener('keydown', function(event) {
 function validateSearch(term) {
     console.log('Validating search term:', term);
 }
-```
 
-Event Flow Control Example
 
-```javascript
+// Event Flow Control Example
+
 const container = document.getElementById('container');
 const button = document.getElementById('innerButton');
 
@@ -287,11 +278,9 @@ button.addEventListener('click', function(event) {
     console.log('Button clicked');
     // event.stopPropagation(); // Uncomment to stop event bubbling
 });
-```
 
-Practical Example: Todo List Item with Multiple Interactions
+// Practical Example: Todo List Item with Multiple Interactions
 
-```javascript
 // Simulating todo items
 const todoItems = document.querySelectorAll('.todo-item');
 
@@ -337,11 +326,10 @@ function enableEditing(element) {
 function showContextMenu(element, x, y) {
     console.log('Context menu for:', element.textContent, 'at', x, y);
 }
-```
 
-Removing Event Listeners
 
-```javascript
+// Removing Event Listeners
+
 const myButton = document.getElementById('myButton');
 
 function handleClick() {
@@ -352,11 +340,10 @@ function handleClick() {
 
 // Add the listener
 myButton.addEventListener('click', handleClick);
-```
 
-Document Loading Events Comparison
+// Document Loading Events Comparison
 
-```javascript
+
 // DOMContentLoaded: When DOM is ready (recommended for most cases)
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM ready - safe to manipulate elements');
@@ -376,10 +363,10 @@ function initializeApp() {
 function showLoadingComplete() {
     console.log('Everything loaded!');
 }
-```
 
----
 
+
+/*
 Summary
 
 We've explored three approaches to JavaScript event handling, each with its own strengths:
@@ -391,4 +378,4 @@ We've explored three approaches to JavaScript event handling, each with its own 
 For new projects, always prefer addEventListener() for its flexibility and adherence to web standards. Use anonymous functions when you need quick, one-off handlers, and reserve DOM event handlers primarily for maintaining older code or extremely simple scenarios.
 
 The key progression is from rigid but simple (DOM handlers) to flexible and powerful (event listeners), with anonymous functions serving as a useful bridge between the two approaches in certain situations.
-  
+*/
