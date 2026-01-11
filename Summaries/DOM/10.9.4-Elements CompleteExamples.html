@@ -1,0 +1,515 @@
+## DOM Selection & Traversal - Complete Examples ##
+
+<!-- HTML Structure (Common for all examples) -->
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM Examples</title>
+</head>
+<body>
+    <!-- Examples will be added here -->
+</body>
+</html>
+```
+
+1. getElementById()
+
+```html
+<div id="main-title">Hello World</div>
+<button onclick="changeTitle()">Change Title</button>
+
+<script>
+function changeTitle() {
+    // Selects single element with id="main-title"
+    const titleElement = document.getElementById("main-title");
+    titleElement.textContent = "Title Changed!";
+    titleElement.style.color = "red";
+}
+</script>
+```
+
+
+
+2. getElementsByClassName()
+
+```html
+<div class="product">Laptop</div>
+<div class="product">Phone</div>
+<div class="product">Tablet</div>
+<button onclick="highlightProducts()">Highlight Products</button>
+
+<script>
+function highlightProducts() {
+    // Returns HTMLCollection of all elements with class="product"
+    const products = document.getElementsByClassName("product");
+    
+    // Loop through the collection
+    for (let i = 0; i < products.length; i++) {
+        products[i].style.backgroundColor = "yellow";
+        products[i].style.padding = "10px";
+    }
+}
+</script>
+```
+
+
+3. getElementsByTagName()
+
+```html
+<article>
+    <h2>Article 1</h2>
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+</article>
+<article>
+    <h2>Article 2</h2>
+    <p>Third paragraph</p>
+</article>
+<button onclick="countParagraphs()">Count Paragraphs</button>
+
+<script>
+function countParagraphs() {
+    // Returns HTMLCollection of all <p> elements
+    const paragraphs = document.getElementsByTagName("p");
+    alert("Total paragraphs: " + paragraphs.length);
+}
+</script>
+```
+
+
+4. getElementsByName()
+
+```html
+<form>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female
+    <input type="radio" name="gender" value="other"> Other
+</form>
+<button onclick="getSelectedGender()">Get Gender</button>
+
+<script>
+function getSelectedGender() {
+    // Returns NodeList of elements with name="gender"
+    const genderOptions = document.getElementsByName("gender");
+    
+    genderOptions.forEach(option => {
+        if (option.checked) {
+            alert("Selected: " + option.value);
+        }
+    });
+}
+</script>
+```
+
+
+5. querySelector()
+
+```html
+<div class="container">
+    <div class="item">Item 1</div>
+    <div class="item special">Item 2 (Special)</div>
+    <div class="item">Item 3</div>
+</div>
+<button onclick="selectFirst()">Select First Special</button>
+
+<script>
+function selectFirst() {
+    // Returns FIRST element matching the CSS selector
+    const firstSpecial = document.querySelector(".item.special");
+    firstSpecial.style.border = "2px solid green";
+}
+</script>
+```
+
+
+6. querySelectorAll()
+
+```html
+<ul class="menu">
+    <li>Home</li>
+    <li class="active">Products</li>
+    <li>Services</li>
+    <li class="active">Contact</li>
+</ul>
+<button onclick="deactivateAll()">Deactivate All</button>
+
+<script>
+function deactivateAll() {
+    // Returns NodeList of ALL matching elements
+    const activeItems = document.querySelectorAll(".menu .active");
+    
+    activeItems.forEach(item => {
+        item.style.color = "gray";
+        item.classList.remove("active");
+    });
+}
+</script>
+```
+
+
+7. parentElement
+
+```html
+<div id="parent-div">
+    <button id="child-btn">Click Me</button>
+</div>
+<button onclick="findParent()">Find Parent</button>
+
+<script>
+function findParent() {
+    const childBtn = document.getElementById("child-btn");
+    
+    // Returns the parent ELEMENT (not text nodes)
+    const parentDiv = childBtn.parentElement;
+    
+    parentDiv.style.border = "3px dashed blue";
+    console.log("Parent tag:", parentDiv.tagName); // DIV
+}
+</script>
+```
+
+
+8. parentNode
+
+```html
+<div id="container">
+    <!-- This is a comment node -->
+    <span id="text-element">Some text</span>
+</div>
+<button onclick="showParentNode()">Show Parent Node</button>
+
+<script>
+function showParentNode() {
+    const textElement = document.getElementById("text-element");
+    
+    // Returns the parent NODE (could be element, document, or text)
+    const parent = textElement.parentNode;
+    
+    console.log("Parent node type:", parent.nodeType); // 1 (ELEMENT_NODE)
+    console.log("Parent node name:", parent.nodeName); // DIV
+}
+</script>
+```
+
+
+9. previousElementSibling
+
+```html
+<ul>
+    <li id="first">First Item</li>
+    <li id="second">Second Item</li>
+    <li id="third">Third Item</li>
+</ul>
+<button onclick="highlightPrevious()">Highlight Previous</button>
+
+<script>
+function highlightPrevious() {
+    const secondItem = document.getElementById("second");
+    
+    // Returns previous sibling ELEMENT only
+    const previousItem = secondItem.previousElementSibling;
+    
+    if (previousItem) {
+        previousItem.style.backgroundColor = "lightgreen";
+    }
+}
+</script>
+```
+
+
+10. previousSibling
+
+```html
+<div id="wrapper">
+    Text before
+    <span id="target">Target Element</span>
+</div>
+<button onclick="checkPreviousSibling()">Check Previous Sibling</button>
+
+<script>
+function checkPreviousSibling() {
+    const target = document.getElementById("target");
+    
+    // Returns previous sibling NODE (could be text, comment, or element)
+    const prevSibling = target.previousSibling;
+    
+    console.log("Previous sibling:", prevSibling);
+    console.log("Node type:", prevSibling.nodeType); // 3 (TEXT_NODE)
+    console.log("Content:", prevSibling.textContent.trim());
+}
+</script>
+```
+
+
+11. nextElementSibling
+
+```html
+<div class="card">Card 1</div>
+<div class="card" id="current">Card 2 (Current)</div>
+<div class="card">Card 3</div>
+<button onclick="highlightNext()">Highlight Next Card</button>
+
+<script>
+function highlightNext() {
+    const current = document.getElementById("current");
+    
+    // Returns next sibling ELEMENT only
+    const nextCard = current.nextElementSibling;
+    
+    if (nextCard) {
+        nextCard.style.transform = "scale(1.1)";
+        nextCard.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+    }
+}
+</script>
+```
+
+
+12. nextSibling
+
+```html
+<div>
+    <strong id="bold-text">Important:</strong>
+    <!-- Comment node -->
+    Normal text after
+</div>
+<button onclick="examineNextSibling()">Examine Next Sibling</button>
+
+<script>
+function examineNextSibling() {
+    const boldText = document.getElementById("bold-text");
+    
+    // Returns next sibling NODE
+    const nextNode = boldText.nextSibling;
+    
+    console.log("Next sibling node type:", nextNode.nodeType); // 8 (COMMENT_NODE)
+    console.log("Next sibling content:", nextNode.textContent);
+}
+</script>
+```
+
+
+13. firstElementChild
+
+```html
+<ul id="fruit-list">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+</ul>
+<button onclick="highlightFirstFruit()">Highlight First Fruit</button>
+
+<script>
+function highlightFirstFruit() {
+    const fruitList = document.getElementById("fruit-list");
+    
+    // Returns first child ELEMENT only
+    const firstFruit = fruitList.firstElementChild;
+    
+    firstFruit.style.fontWeight = "bold";
+    firstFruit.style.color = "red";
+}
+</script>
+```
+
+
+14. firstChild
+
+```html
+<div id="content">
+    <!-- This comment is the first child -->
+    <p>First paragraph</p>
+    <p>Second paragraph</p>
+</div>
+<button onclick="showFirstChild()">Show First Child</button>
+
+<script>
+function showFirstChild() {
+    const content = document.getElementById("content");
+    
+    // Returns first child NODE (could be text, comment, or element)
+    const firstChild = content.firstChild;
+    
+    console.log("First child node type:", firstChild.nodeType); // 8 (COMMENT_NODE)
+    console.log("Is comment?", firstChild.nodeType === Node.COMMENT_NODE);
+}
+</script>
+```
+
+
+15. lastElementChild
+
+```html
+<div id="task-list">
+    <div class="task">Task 1</div>
+    <div class="task">Task 2</div>
+    <div class="task">Task 3</div>
+</div>
+<button onclick="completeLastTask()">Complete Last Task</button>
+
+<script>
+function completeLastTask() {
+    const taskList = document.getElementById("task-list");
+    
+    // Returns last child ELEMENT only
+    const lastTask = taskList.lastElementChild;
+    
+    lastTask.style.textDecoration = "line-through";
+    lastTask.style.color = "gray";
+}
+</script>
+```
+
+
+16. lastChild
+
+```html
+<div id="section">
+    <h3>Section Title</h3>
+    Some text content
+</div>
+<button onclick="checkLastChild()">Check Last Child</button>
+
+<script>
+function checkLastChild() {
+    const section = document.getElementById("section");
+    
+    // Returns last child NODE
+    const lastChild = section.lastChild;
+    
+    console.log("Last child node type:", lastChild.nodeType); // 3 (TEXT_NODE)
+    console.log("Last child content:", lastChild.textContent.trim());
+}
+</script>
+```
+
+
+17. children
+
+```html
+<div id="gallery">
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+</div>
+<button onclick="countImages()">Count Images</button>
+
+<script>
+function countImages() {
+    const gallery = document.getElementById("gallery");
+    
+    // Returns HTMLCollection of child ELEMENTS only
+    const imageElements = gallery.children;
+    
+    console.log("Number of child elements:", imageElements.length);
+    
+    // Add border to all child elements
+    for (let img of imageElements) {
+        img.style.border = "2px solid orange";
+    }
+}
+</script>
+```
+
+
+18. childNodes
+
+```html
+<div id="mixed-content">
+    Text at start
+    <span>Element 1</span>
+    <!-- Comment between elements -->
+    <span>Element 2</span>
+    Text at end
+</div>
+<button onclick="analyzeChildNodes()">Analyze Child Nodes</button>
+
+<script>
+function analyzeChildNodes() {
+    const container = document.getElementById("mixed-content");
+    
+    // Returns NodeList of ALL child nodes
+    const allNodes = container.childNodes;
+    
+    console.log("Total child nodes:", allNodes.length);
+    
+    allNodes.forEach((node, index) => {
+        console.log(`Node ${index}: Type=${node.nodeType}, Name=${node.nodeName}`);
+    });
+}
+</script>
+```
+
+Complete Example Combining Multiple Methods
+
+```html
+<div id="main-container">
+    <header id="page-header">
+        <h1>DOM Traversal Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about" class="active">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="content">
+        <article class="post" id="first-post">
+            <h2>First Article</h2>
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </article>
+        <article class="post">
+            <h2>Second Article</h2>
+            <p>Third paragraph</p>
+        </article>
+    </section>
+</div>
+
+<button onclick="demoAllMethods()">Run All Demos</button>
+
+<script>
+function demoAllMethods() {
+    // 1. getElementById
+    const header = document.getElementById("page-header");
+    header.style.backgroundColor = "#f0f0f0";
+    
+    // 2. getElementsByClassName
+    const posts = document.getElementsByClassName("post");
+    console.log("Number of posts:", posts.length);
+    
+    // 3. getElementsByTagName
+    const paragraphs = document.getElementsByTagName("p");
+    console.log("Number of paragraphs:", paragraphs.length);
+    
+    // 5. querySelector
+    const activeLink = document.querySelector("a.active");
+    activeLink.style.color = "red";
+    
+    // 6. querySelectorAll
+    const allLinks = document.querySelectorAll("nav a");
+    allLinks.forEach(link => {
+        link.style.padding = "5px";
+    });
+    
+    // 7. parentElement
+    const firstPost = document.getElementById("first-post");
+    const parentSection = firstPost.parentElement;
+    parentSection.style.border = "1px solid #ccc";
+    
+    // 13. firstElementChild
+    const nav = document.querySelector("nav");
+    const firstNavItem = nav.firstElementChild;
+    firstNavItem.style.fontWeight = "bold";
+    
+    // 17. children
+    const contentSection = document.querySelector(".content");
+    const childArticles = contentSection.children;
+    console.log("Child articles:", childArticles.length);
+}
+</script>
+```

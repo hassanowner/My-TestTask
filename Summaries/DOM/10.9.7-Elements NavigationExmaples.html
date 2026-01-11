@@ -1,0 +1,567 @@
+## DOM Selection & Traversal ##
+
+1) getElementById()
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="mainTitle">Hello World</h2>
+
+<script>
+// Select one element using its unique id
+const title = document.getElementById("mainTitle");
+
+title.style.color = "red";
+title.style.fontSize = "30px";
+title.style.backgroundColor = "yellow";
+title.style.padding = "10px";
+title.style.textAlign = "center";
+</script>
+
+</body>
+</html>
+```
+
+
+2) getElementsByClassName()
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<p class="product">Apple</p>
+<p class="product">Banana</p>
+<p class="product">Orange</p>
+
+<script>
+// Select all elements with class="product"
+const products = document.getElementsByClassName("product");
+
+// products is a LIVE HTMLCollection
+products[0].style.color = "green";
+products[1].style.color = "yellow";
+products[2].style.color = "orange";
+
+products[0].style.fontSize = "20px";
+products[1].style.fontSize = "22px";
+products[2].style.fontSize = "24px";
+
+products[0].style.backgroundColor = "#e8f5e8";
+products[1].style.backgroundColor = "#fffde7";
+products[2].style.backgroundColor = "#fff3e0";
+</script>
+
+</body>
+</html>
+```
+
+
+3) getElementsByTagName()
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>Box 1</div>
+<div>Box 2</div>
+<div>Box 3</div>
+
+<script>
+// Select all <div> elements
+const divs = document.getElementsByTagName("div");
+
+// Access by index
+divs[0].style.border = "2px solid blue";
+divs[1].style.border = "2px solid red";
+divs[2].style.border = "2px solid green";
+
+divs[0].style.width = "100px";
+divs[1].style.width = "120px";
+divs[2].style.width = "140px";
+
+divs[0].style.height = "50px";
+divs[1].style.height = "60px";
+divs[2].style.height = "70px";
+
+divs[0].style.textAlign = "center";
+divs[1].style.textAlign = "center";
+divs[2].style.textAlign = "center";
+</script>
+
+</body>
+</html>
+```
+
+
+4) getElementsByName()
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="checkbox" name="fruit" value="apple"> Apple
+<input type="checkbox" name="fruit" value="banana"> Banana
+<input type="checkbox" name="fruit" value="orange"> Orange
+
+<script>
+// Select elements by name attribute
+const fruits = document.getElementsByName("fruit");
+
+// NodeList of elements
+fruits[0].checked = true;
+fruits[1].checked = true;
+
+fruits[0].style.marginRight = "15px";
+fruits[1].style.marginRight = "15px";
+fruits[2].style.marginRight = "15px";
+</script>
+
+</body>
+</html>
+```
+
+
+5) querySelector()
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="box">First Box</div>
+<div class="box">Second Box</div>
+<div class="box">Third Box</div>
+
+<script>
+// Returns first matching element
+const firstBox = document.querySelector(".box");
+
+firstBox.style.backgroundColor = "lightblue";
+firstBox.style.padding = "15px";
+firstBox.style.border = "3px solid darkblue";
+firstBox.style.fontSize = "18px";
+firstBox.style.fontWeight = "bold";
+</script>
+
+</body>
+</html>
+```
+
+
+6) querySelectorAll()
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+<div class="card">Card 3</div>
+
+<script>
+// Returns all matching elements
+const cards = document.querySelectorAll(".card");
+
+// NodeList can be looped through
+cards.forEach(function(card, index) {
+    if (index === 0) {
+        card.style.backgroundColor = "#ffcccc";
+    } else if (index === 1) {
+        card.style.backgroundColor = "#ccffcc";
+    } else {
+        card.style.backgroundColor = "#ccccff";
+    }
+    
+    card.style.width = "150px";
+    card.style.height = "80px";
+    card.style.margin = "10px";
+    card.style.padding = "10px";
+    card.style.textAlign = "center";
+    card.style.borderRadius = "8px";
+});
+</script>
+
+</body>
+</html>
+```
+
+
+7) parentElement
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container">
+  <button id="myButton">Click Here</button>
+</div>
+
+<script>
+const button = document.getElementById("myButton");
+
+// Get parent ELEMENT only (not text)
+const parent = button.parentElement;
+
+parent.style.backgroundColor = "#e6f7ff";
+parent.style.border = "2px solid #0066cc";
+parent.style.padding = "20px";
+parent.style.margin = "20px";
+parent.style.borderRadius = "10px";
+</script>
+
+</body>
+</html>
+```
+
+
+8) parentNode
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+  <span id="childElement">Child Element</span>
+</div>
+
+<script>
+const child = document.getElementById("childElement");
+
+// Get parent NODE (could be element or text)
+const parentNode = child.parentNode;
+
+parentNode.style.backgroundColor = "#f0f0f0";
+parentNode.style.padding = "15px";
+parentNode.style.border = "1px dashed #999";
+</script>
+
+</body>
+</html>
+```
+
+
+9) previousElementSibling
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Chapter 1</p>
+<p id="middleChapter">Chapter 2</p>
+<p>Chapter 3</p>
+
+<script>
+const middle = document.getElementById("middleChapter");
+
+// Get previous ELEMENT only (not text)
+const previous = middle.previousElementSibling;
+
+previous.style.color = "red";
+previous.style.fontSize = "24px";
+previous.style.fontWeight = "bold";
+previous.style.textDecoration = "underline";
+</script>
+
+</body>
+</html>
+```
+
+
+10) previousSibling
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container">
+  Text before element
+  <span id="targetElement">Target Element</span>
+</div>
+
+<script>
+const target = document.getElementById("targetElement");
+
+// Get previous node (could be text)
+const prevNode = target.previousSibling;
+
+// Convert text node to element for display
+if (prevNode && prevNode.nodeType === Node.TEXT_NODE) {
+    const textSpan = document.createElement("span");
+    textSpan.textContent = "Previous text: " + prevNode.textContent.trim();
+    textSpan.style.color = "#666";
+    textSpan.style.fontStyle = "italic";
+    textSpan.style.marginRight = "10px";
+    
+    target.parentNode.insertBefore(textSpan, target);
+}
+</script>
+
+</body>
+</html>
+```
+
+
+11) nextElementSibling
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="currentItem">Current Item</p>
+<p>Next Item</p>
+<p>Third Item</p>
+
+<script>
+const current = document.getElementById("currentItem");
+
+// Get next ELEMENT only
+const nextEl = current.nextElementSibling;
+
+nextEl.style.backgroundColor = "#fff3cd";
+nextEl.style.border = "2px solid #ffeaa7";
+nextEl.style.padding = "10px";
+nextEl.style.borderRadius = "5px";
+nextEl.style.fontWeight = "bold";
+</script>
+
+</body>
+</html>
+```
+
+
+12) nextSibling
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+  <strong id="boldText">Important text:</strong>
+  Normal text after element
+</div>
+
+<script>
+const boldText = document.getElementById("boldText");
+
+// Get next node (could be text)
+const nextNode = boldText.nextSibling;
+
+// Add background to parent to highlight text
+boldText.parentNode.style.backgroundColor = "#f8f9fa";
+boldText.parentNode.style.padding = "10px";
+boldText.parentNode.style.margin = "10px";
+</script>
+
+</body>
+</html>
+```
+
+
+13) firstElementChild
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="studentList">
+  <li>Ahmed</li>
+  <li>Mohammed</li>
+  <li>Ali</li>
+</ul>
+
+<script>
+const list = document.getElementById("studentList");
+
+// Get first child ELEMENT only
+const firstChild = list.firstElementChild;
+
+firstChild.style.backgroundColor = "#d4edda";
+firstChild.style.color = "#155724";
+firstChild.style.padding = "8px";
+firstChild.style.borderRadius = "5px";
+firstChild.style.fontWeight = "bold";
+firstChild.style.marginBottom = "5px";
+</script>
+
+</body>
+</html>
+```
+
+
+14) firstChild
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="contentBox">
+  Text at the beginning
+  <span>Internal element</span>
+  Text at the end
+</div>
+
+<script>
+const contentBox = document.getElementById("contentBox");
+
+// Get first child node (could be text)
+const firstNode = contentBox.firstChild;
+
+contentBox.style.backgroundColor = "#e3f2fd";
+contentBox.style.padding = "15px";
+contentBox.style.border = "1px solid #2196f3";
+contentBox.style.borderRadius = "8px";
+</script>
+
+</body>
+</html>
+```
+
+
+15) lastElementChild
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<ol id="taskList">
+  <li>Task 1</li>
+  <li>Task 2</li>
+  <li>Task 3</li>
+</ol>
+
+<script>
+const taskList = document.getElementById("taskList");
+
+// Get last child ELEMENT only
+const lastChild = taskList.lastElementChild;
+
+lastChild.style.backgroundColor = "#f8d7da";
+lastChild.style.color = "#721c24";
+lastChild.style.padding = "10px";
+lastChild.style.borderRadius = "5px";
+lastChild.style.textDecoration = "line-through";
+lastChild.style.fontWeight = "bold";
+</script>
+
+</body>
+</html>
+```
+
+
+16) lastChild
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="wrapper">
+  <p>First paragraph</p>
+  <p>Second paragraph</p>
+  Text at the end
+</div>
+
+<script>
+const wrapper = document.getElementById("wrapper");
+
+// Get last child node (could be text)
+const lastNode = wrapper.lastChild;
+
+wrapper.style.backgroundColor = "#fff3cd";
+wrapper.style.padding = "15px";
+wrapper.style.border = "2px solid #ffc107";
+wrapper.style.margin = "15px";
+</script>
+
+</body>
+</html>
+```
+
+
+17) children
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="parentDiv">
+  <p>Child 1</p>
+  <p>Child 2</p>
+  <p>Child 3</p>
+</div>
+
+<script>
+const parentDiv = document.getElementById("parentDiv");
+
+// HTMLCollection of child ELEMENTS only (not text)
+const kids = parentDiv.children;
+
+// kids[0] first child element
+kids[0].style.color = "blue";
+kids[1].style.color = "green";
+kids[2].style.color = "purple";
+
+kids[0].style.fontSize = "16px";
+kids[1].style.fontSize = "18px";
+kids[2].style.fontSize = "20px";
+
+kids[0].style.padding = "5px";
+kids[1].style.padding = "10px";
+kids[2].style.padding = "15px";
+
+kids[0].style.backgroundColor = "#e6f7ff";
+kids[1].style.backgroundColor = "#e8f5e9";
+kids[2].style.backgroundColor = "#f3e5f5";
+</script>
+
+</body>
+</html>
+```
+
+
+18) childNodes
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="mainDiv">
+  <h3>Title</h3>
+  <p>Text paragraph</p>
+</div>
+
+<script>
+const mainDiv = document.getElementById("mainDiv");
+
+// NodeList of all child nodes (elements and text)
+const nodes = mainDiv.childNodes;
+
+mainDiv.style.backgroundColor = "#f5f5f5";
+mainDiv.style.padding = "20px";
+mainDiv.style.border = "3px solid #9c27b0";
+mainDiv.style.borderRadius = "10px";
+
+// Show number of nodes in console
+console.log("Number of child nodes: " + nodes.length);
+</script>
+
+</body>
+</html>
+```
