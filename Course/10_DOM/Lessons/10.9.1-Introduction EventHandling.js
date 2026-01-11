@@ -1,4 +1,5 @@
-Introduction to Event Handling and Form Validation in HTML & JavaScript
+/*
+## Introduction to Event Handling and Form Validation in HTML & JavaScript ##
 
 This comprehensive guide will explore the foundational concepts of implementing client-side form validation using event handlers in web development. We will systematically examine the following key topics:
 
@@ -10,17 +11,19 @@ This comprehensive guide will explore the foundational concepts of implementing 
 
 Each topic will be explored in detail, covering its purpose, functionality, characteristics, and implementation mechanics.
 
----
 
 1. HTML Event Handlers
 
 What Are HTML Event Handlers?
 
-HTML event handlers are JavaScript functions that are triggered in response to specific user interactions or browser events on HTML elements. They are directly embedded within HTML elements using special attributes that correspond to different types of events.
+HTML event handlers are JavaScript functions that are triggered in response to specific user interactions or browser events on HTML elements.
+They are directly embedded within HTML elements using special attributes that correspond to different types of events.
 
 Function and Purpose
 
-The primary function of HTML event handlers is to make web pages interactive and responsive to user actions. They serve as the bridge between static HTML content and dynamic JavaScript functionality, allowing developers to execute custom code when users interact with page elements.
+The primary function of HTML event handlers is to make web pages interactive and responsive to user actions. 
+They serve as the bridge between static HTML content and dynamic JavaScript functionality,
+allowing developers to execute custom code when users interact with page elements.
 
 Key Characteristics
 
@@ -30,17 +33,18 @@ Key Characteristics
 · Simplicity: Easy to implement for basic interactivity
 · Limited Scalability: Can become difficult to manage in complex applications
 
-How They Work: Basic Structure
+How They Work: Basic Structure :
 
-HTML event handlers work by binding JavaScript code to specific events through HTML attributes. When the specified event occurs on the element, the browser automatically executes the associated JavaScript.
+HTML event handlers work by binding JavaScript code to specific events through HTML attributes.
+When the specified event occurs on the element, the browser automatically executes the associated JavaScript.
 
-Basic Syntax:
+Basic Syntax: */
 
 ```html
 <element on[event]="JavaScript code or function call">
 ```
 
-Example Implementation:
+// Example Implementation:
 
 ```html
 <!-- Direct JavaScript in attribute -->
@@ -50,7 +54,7 @@ Example Implementation:
 <input type="text" onblur="validateField()">
 ```
 
-Complete Example from Our Text:
+// Complete Example from Our Text:
 
 ```html
 <input id="age" type="number" value="0" onblur="checkAgeNotNegative()"/>
@@ -62,13 +66,17 @@ In this example:
 · checkAgeNotNegative() is the JavaScript function to execute
 · The function triggers when the input field loses focus (user clicks elsewhere)
 
----
 
+
+
+/*
 2. Form Validation Concepts
 
 What Is Form Validation?
 
-Form validation is the process of ensuring that user-submitted data meets specific criteria, formats, and constraints before being processed or stored. It involves checking input values against defined rules and providing feedback to users.
+Form validation is the process of ensuring that user-submitted data meets specific criteria, formats,
+and constraints before being processed or stored.
+It involves checking input values against defined rules and providing feedback to users.
 
 Function and Purpose
 
@@ -114,7 +122,9 @@ Critical Implementation Principle:
 
 Client-side validation should always be complemented with server-side validation. Client-side validation improves user experience, while server-side validation ensures security and data integrity.
 
----
+
+
+
 
 3. HTML5 Native Validation
 
@@ -147,7 +157,7 @@ Common Validation Attributes:
 · pattern: Regular expression pattern matching
 · maxlength: Maximum character length
 
-Example:
+Example: */
 
 ```html
 <!-- HTML5 validation example -->
@@ -166,8 +176,10 @@ Limitations Mentioned in Text:
 
 Recommendation: While HTML5 validation is useful for basic cases, web developers should still master JavaScript validation for complex requirements and better user experience control.
 
----
 
+
+  
+/*
 4. JavaScript Event Handler Implementation
 
 What Is JavaScript Event Handler Implementation?
@@ -189,7 +201,7 @@ How It Works: Code Structure and Logic
 
 From our example, let's examine the complete implementation structure:
 
-HTML Structure (Listing 6.1):
+HTML Structure: */
 
 ```html
 <!DOCTYPE html>
@@ -210,9 +222,9 @@ HTML Structure (Listing 6.1):
 </html>
 ```
 
-JavaScript Event Handler (Listing 6.2):
+// JavaScript Event Handler :
 
-```javascript
+
 function checkAgeNotNegative() {
     // 1. Get reference to output container
     const output = document.getElementById('output');
@@ -232,9 +244,8 @@ function checkAgeNotNegative() {
         output.textContent = '';
     }
 }
-```
 
-Step-by-Step Execution:
+// Step-by-Step Execution:
 
 1. Event Trigger: User exits the age input field (triggers blur event)
 2. Handler Execution: Browser calls checkAgeNotNegative() function
@@ -251,8 +262,10 @@ Key Design Considerations:
 · User Experience: Immediate feedback with clear messages
 · State Management: Properly clears messages when validation passes
 
----
 
+
+
+/*
 5. Event Trigger Adaptation
 
 What Is Event Trigger Adaptation?
@@ -274,7 +287,7 @@ How It Works: Changing Validation Triggers
 
 The text demonstrates adapting from blur event to click event validation:
 
-Original Implementation (Blur Event):
+Original Implementation (Blur Event): */
 
 ```html
 <input id="age" type="number" value="0" onblur="checkAgeNotNegative()"/>
@@ -284,7 +297,7 @@ Original Implementation (Blur Event):
 · User Experience: Immediate validation after editing
 · Use Case: Real-time feedback during form completion
 
-Adapted Implementation (Click Event - Listing 6.3):
+// Adapted Implementation (Click Event - Listing 6.3):
 
 ```html
 <input id="age" type="number" value="0"/>
@@ -295,8 +308,9 @@ Adapted Implementation (Click Event - Listing 6.3):
 · User Experience: Delayed validation until user initiates check
 · Use Case: Batch validation or less intrusive checking
 
-Common Event Triggers for Form Validation:
+// Common Event Triggers for Form Validation:
 
+/*
 Event Description Use Case
 onblur Element loses focus Field-by-field validation
 onchange Value changes and loses focus Less intrusive field validation
@@ -313,8 +327,7 @@ Implementation Considerations:
 
 Adaptation Example from Text:
 The example shows switching from automatic validation (onblur) to manual validation (onclick on a button), demonstrating how easily the validation trigger can be modified by changing the event handler attribute and its placement.
-
----
+*/
 
 Summary
 
