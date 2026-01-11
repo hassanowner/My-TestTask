@@ -7,7 +7,7 @@ This guide covers key concepts in client-side form validation using JavaScript.
 It includes HTML event handlers, validation concepts, HTML5 native validation, 
 JavaScript event handlers, and event trigger adaptation.
 
-Each section has a brief explanation and practical code examples.
+Each section has explanations and practical code examples.
 ==========================================================
 */
 
@@ -25,11 +25,10 @@ Function and Purpose
 They make web pages interactive by connecting static HTML elements with dynamic JavaScript functionality.
 Common uses include input validation, button clicks, and updating UI elements.
 
-Example: Name validation */
-
+Example: Name validation
 <input type="text" onblur="validateName()">
 <div id="nameError"></div>
-
+*/
 function validateName() {
   const name = event.target.value;
   const error = document.getElementById('nameError');
@@ -37,7 +36,9 @@ function validateName() {
   console.log("Name:", name);
 }
 
-// Example: Button click counter
+/*
+Example: Button click counter
+*/
 let count = 0;
 function incrementCounter() {
   count++;
@@ -47,8 +48,7 @@ function incrementCounter() {
 
 
 
-/*
-=========================================================
+/* =========================================================
 2. Form Validation Concepts
 
 What Is Form Validation?
@@ -62,15 +62,15 @@ Client-side validation runs in the browser using JavaScript for immediate feedba
 Server-side validation occurs on the server to enforce security and business rules. 
 Both are necessary: client-side for UX, server-side for security.
 
-Example: Email validation */
+Example: Email validation
+*/
 function validateEmail(email) {
   return email.includes('@') && email.includes('.');
 }
 
 
 
-/*
-=========================================================
+/* =========================================================
 3. HTML5 Native Validation
 
 What Is HTML5 Native Validation?
@@ -83,16 +83,14 @@ Function and Purpose
 It simplifies simple validations like ensuring a number falls within a range, or an email is properly formatted.
 However, it is limited and cannot handle complex rules or custom messages consistently across browsers.
 
-Example: */
-
+Example:
 <input type="number" id="age" min="0" max="120" required>
 <input type="email" id="email" required>
 <input type="text" id="zipcode" pattern="[0-9]{5}" required>
-  
+*/
 
 
-/*
-=========================================================
+/* =========================================================
 4. JavaScript Event Handler Implementation
 
 What Is JS Event Handler Implementation?
@@ -104,8 +102,8 @@ Function and Purpose
 It allows flexible, dynamic validation logic beyond HTML5 capabilities.
 You can provide immediate feedback, update the DOM, and handle complex rules.
 
-Example: Age validation */
-  
+Example: Age validation
+*/
 function checkAgeNotNegative() {
   const age = document.getElementById('age').value;
   const output = document.getElementById('output');
@@ -113,11 +111,13 @@ function checkAgeNotNegative() {
   console.log("Age:", age);
 }
 
-//- Trigger: blur, click, or other events
-//- Dynamic feedback shown in output element
-
 /*
-=========================================================
+- Trigger: blur, click, or other events
+- Dynamic feedback shown in output element
+*/
+
+
+/* =========================================================
 5. Event Trigger Adaptation
 
 What Is Event Trigger Adaptation?
@@ -128,8 +128,7 @@ Function and Purpose
 
 You can choose between events like blur, change, input, click, or submit depending on how immediate or intrusive validation should be.
 
-Example: Blur vs Click 
-
+Example: Blur vs Click
 <input id="age" type="number" onblur="checkAgeNotNegative()">
 <input type="submit" onclick="checkAgeNotNegative()">
 
@@ -139,12 +138,10 @@ Considerations:
 - input: real-time, may impact performance
 - UX: Avoid too frequent validation that annoys users
 ==========================================================
+*/
 
 
-
-  
-
-=========================================================
+/* =========================================================
 Key Takeaways
 
 1. HTML Event Handlers: Quick, simple, limited scalability
