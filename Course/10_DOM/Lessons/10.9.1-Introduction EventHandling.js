@@ -113,8 +113,8 @@ function checkAgeNotNegative() {
   console.log("Age:", age);
 }
 
-// - Trigger: blur, click, or other events
-// - Dynamic feedback shown in output element
+//- Trigger: blur, click, or other events
+//- Dynamic feedback shown in output element
 
 /*
 =========================================================
@@ -139,9 +139,12 @@ Considerations:
 - input: real-time, may impact performance
 - UX: Avoid too frequent validation that annoys users
 ==========================================================
-*/
 
-/* =========================================================
+
+
+  
+
+=========================================================
 Key Takeaways
 
 1. HTML Event Handlers: Quick, simple, limited scalability
