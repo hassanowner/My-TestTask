@@ -107,7 +107,7 @@ const myButton = document.getElementById('myButton');
 // Using anonymous function directly
 myButton.onclick = function() {
     console.log('Anonymous function executed!');
-    alert('Hello from anonymous function!');
+    console.log('Hello from anonymous function!');
 };
 
 // Wrapping Multiple Functions (Solving the DOM Handler Limitation)
