@@ -58,7 +58,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   
   // 5. eventPhase
-  // Indicates the current phase of event flow: 0 = NONE, 1 = CAPTURING, 2 = AT_TARGET, 3 = BUBBLING
+  // Indicates the current phase of event flow:
+  // 0 = NONE,
+  // 1 = CAPTURING,
+  // 2 = AT_TARGET,
+  // 3 = BUBBLING
+  
   button.addEventListener('click', function(e) {
     console.log("eventPhase:", e.eventPhase);
     // Expected Result: 2
