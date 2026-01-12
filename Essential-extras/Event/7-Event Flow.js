@@ -31,14 +31,14 @@ Instead, it travels through multiple DOM nodes in a specific order.
 This travel process is called:
 --> Event Flow
 
-The DOM is a tree structure:
+The DOM is a tree structure: */
 document
  └── html
      └── body
          └── parent div
              └── child div
                  └── box div
-
+/*
 An event moves through this tree in THREE PHASES.
 
 
@@ -55,10 +55,10 @@ An event moves through this tree in THREE PHASES.
 • Event listeners must be registered with:
   addEventListener(type, handler, true)
 
-Example path:
+Example path: */
 document → html → body → parent → child → box
 
-Important:
+/* Important:
 - Default event listeners do NOT run in capturing
 - Capturing is optional and must be explicitly enabled
 
@@ -71,9 +71,9 @@ Important:
 • All listeners on the target element execute here
 • Happens exactly ONCE
 
-Example:
+Example: */
 Clicking div.box → Target Phase executes on div.box
-
+/*
 --------------------------------------------------
 3) BUBBLING PHASE
 --------------------------------------------------
@@ -81,10 +81,10 @@ Clicking div.box → Target Phase executes on div.box
 • Travels back to the document node
 • This is the DEFAULT behavior in JavaScript
 
-Example path:
+Example path: */
 box → child → parent → body → html → document
 
-Important:
+/* Important:
 - Most event handling relies on bubbling
 - Event delegation depends on this phase
 
@@ -92,7 +92,7 @@ Important:
 
 ====================================================================
 3. EVENT CHARACTERISTICS & MOVEMENT TABLE
-====================================================================
+==================================================================== */
 
 | Feature              | Description                                   | HTML Div Movement |
 |---------------------|-----------------------------------------------|------------------|
@@ -105,19 +105,19 @@ Important:
 | stopPropagation()   | Stops further movement                        | Blocks bubbling  |
 
 
-
+/*
 ====================================================================
 4. BASIC EVENT FLOW RULE (MDN CONCEPT)
 ====================================================================
 
 MDN BASIC RULE (Simplified):
 
-"When an event occurs, it flows in three steps:
+"When an event occurs, it flows in three steps: */
 1. Capture phase (top → target)
 2. Target phase (on the target)
 3. Bubble phase (target → top)"
 
-Basic syntax rule: */
+// Basic syntax rule: 
 
 element.addEventListener(
   "event",
@@ -170,7 +170,7 @@ STAGE 1: INITIAL STATE (BEFORE ANY INTERACTION)
 • No element has a gray background.
 • The browser is waiting for a user interaction.
 
-DOM TREE (SIMPLIFIED):
+DOM TREE (SIMPLIFIED): */
 document
  └── parent
      ├── child1
@@ -179,11 +179,11 @@ document
      └── child2
          ├── box C
          └── box D
-
+/*
 At this stage:
 • Nothing has happened yet.
 • The event system is idle.
-• All listeners are already registered and ready.
+• All listeners are already registered and ready. 
 
 ====================================================================
 
@@ -220,10 +220,10 @@ TARGET PHASE (FIRST EXECUTION):
 • The event starts executing on the target element itself.
 • The event listener attached to box A runs first.
 
-Inside the event listener:
+Inside the event listener: */
 this === box A
 
-Executed code:
+// Executed code:
 this.style.backgroundColor = "gray";
 
 Result:
@@ -233,6 +233,7 @@ At this moment:
 • target content = "A"
 • this refers to box A
 
+/*
 ====================================================================
 
 STAGE 4: BUBBLING PHASE (UPWARD MOVEMENT)
@@ -250,16 +251,16 @@ Current element:
 • child1 also has a click listener.
 • The listener executes again.
 
-Inside the event listener:
+Inside the event listener: */
 this === child1
 
-Executed code:
+// Executed code:
 this.style.backgroundColor = "gray";
 
 Result:
 • Child 1 turns gray.
 
-Important:
+/* Important:
 • target is still box A
 • only this has changed
 
@@ -271,13 +272,13 @@ Current element:
 • The event continues bubbling upward.
 • The listener on parent executes.
 
-Inside the event listener:
+Inside the event listener: */
 this === parent
 
-Executed code:
+// Executed code:
 this.style.backgroundColor = "gray";
 
-Result:
+/* Result:
 • Parent turns gray.
 
 ====================================================================
