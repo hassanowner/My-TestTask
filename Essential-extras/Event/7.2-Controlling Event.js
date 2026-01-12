@@ -176,7 +176,7 @@ RESULT:
 
 
 ------------------------------------------------------------
-4) COMPARISON TABLE (SUMMARY TABLE)
+3) COMPARISON TABLE (SUMMARY TABLE)
 ------------------------------------------------------------ */
 
 | Feature           | stopPropagation()             | preventDefault()               |
@@ -190,7 +190,7 @@ RESULT:
 
 /*
 ------------------------------------------------------------
-5) FINAL SUMMARY
+4) FINAL SUMMARY
 ------------------------------------------------------------
 
 - stopPropagation():
