@@ -125,6 +125,7 @@ element.addEventListener(
   useCapture // false = bubbling (default), true = capturing
 );
 
+
 /*
 ====================================================================
 5. APPLYING EVENT FLOW TO THE GIVEN EXAMPLE
@@ -133,13 +134,177 @@ element.addEventListener(
 // HTML STRUCTURE:
 
 <div id="parent">
-  <div id="child1">
+  Parent
+  <div id="child1" class="child">
+    Child 1
     <div class="box">A</div>
     <div class="box">B</div>
+  </div>
+
+  <div id="child2" class="child">
+    Child 2
+    <div class="box">C</div>
+    <div class="box">D</div>
   </div>
 </div>
 
 // JAVASCRIPT:
+
+const allDivs = document.querySelectorAll("div");
+
+allDivs.forEach(div => {
+  div.addEventListener("click", function () {
+    this.style.backgroundColor = "gray";
+  });
+});
+
+/*
+====================================================================
+STEP-BY-STEP EXPLANATION OF EVENT MOVEMENT (BUBBLING)
+====================================================================
+
+1. INITIAL STATE (BEFORE CLICK)
+
+• All div elements have the same click event listener.
+• No element has a gray background.
+• The browser is waiting for a user interaction.
+
+DOM TREE (SIMPLIFIED):
+document
+ └── parent
+     ├── child1
+     │   ├── box A
+     │   └── box B
+     └── child2
+         ├── box C
+         └── box D
+
+2. USER ACTION
+
+The user clicks on: 
+<div class="box">A</div>     
+   
+- This action creates a click event.
+
+   
+3. TARGET IDENTIFICATION
+
+• The browser determines the element that was actually clicked.
+• This element is called the TARGET.
+
+TARGET ELEMENT:
+<div class="box">A</div>
+
+** Important rule:
+The target is always the clicked element and never changes during
+the event flow.
+
+
+4. TARGET PHASE (FIRST EXECUTION)
+
+• The event starts executing on the target element itself.
+• The event listener attached to box A runs.
+
+Inside the event listener: */
+this === box A
+
+// Executed code:
+this.style.backgroundColor = "gray"; 
+
+/* Result:
+• Box A turns gray.
+
+At this moment:
+• target content = "A"
+• this refers to box A
+
+
+5. BUBBLING PHASE BEGINS
+
+After the target phase, the event moves upward in the DOM tree.
+This upward movement is called EVENT BUBBLING.
+
+
+6. BUBBLING STEP 1: CHILD1
+
+Current element:
+<div id="child1" class="child">
+
+• The event reaches child1.
+• child1 also has a click listener.
+• The listener executes again.
+
+Inside the event listener: */
+this === child1
+
+// Executed code:
+this.style.backgroundColor = "gray";
+
+/* Result:
+• Child 1 turns gray.
+
+Important:
+• target is still box A
+• only this has changed
+
+
+7. BUBBLING STEP 2: PARENT
+
+Current element: 
+<div id="parent">
+
+• The event continues bubbling upward.
+• The listener on parent executes.
+
+Inside the event listener: */
+this === parent
+
+// Executed code:
+this.style.backgroundColor = "gray";
+
+/* Result:
+• Parent turns gray.
+
+
+8. END OF EVENT FLOW
+
+• The event continues bubbling to body, html, and document.
+• No listeners exist there.
+• The event flow stops automatically.
+
+
+9. FINAL VISUAL RESULT
+
+If the user clicks on box A, the following elements turn gray:
+
+1. Box A (target)
+2. Child 1
+3. Parent
+
+Boxes B, C, and D remain unchanged.
+
+
+10. KEY RULES DEMONSTRATED
+
+• The event starts on the target element.
+• The event bubbles upward through parent elements.
+• The same listener runs on every element that has it.
+• this changes at every level.
+• The target always remains the originally clicked element.
+
+====================================================================
+SUMMARY
+====================================================================
+
+This code demonstrates event bubbling clearly:
+A single click on a deeply nested element causes the event to move
+upward through the DOM tree, executing the same event listener on
+each ancestor element in order, starting from the target and ending
+at the highest parent that has a listener.
+
+=============================================================
+*/
+
 
 const allDivs = document.querySelectorAll("div");
 
