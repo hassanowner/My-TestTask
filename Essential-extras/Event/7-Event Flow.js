@@ -307,10 +307,37 @@ KEY RULES CONFIRMED BY THIS FLOW:
 • this changes at every level of bubbling.
 • target always remains the originally clicked element.
 
+
+/*
+## TABLE: EVENT FLOW STAGES — TARGET vs CURRENTTARGET ##
+
+The following table explains how the event moves when the user clicks
+on <div class="box">A</div>, and how the values of target and
+currentTarget (this) change at each programming stage.
+
+--------------------------------------------------------------------------------------------------------------------------------
+| Programming Stage | Event Position        | target             | currentTarget (this)   | What Happens |
+--------------------------------------------------------------------------------------------------------------------------------
+| Stage 1           | box A (Target Phase)  | box A ("A")        | box A                  | The click event starts on the element that was actually clicked. The listener on box A executes first and box A turns gray. |
+--------------------------------------------------------------------------------------------------------------------------------
+| Stage 2           | child1 (Bubbling)     | box A ("A")        | child1                 | The event bubbles up to child1. The same listener executes on child1. Child1 turns gray. The target remains box A. |
+--------------------------------------------------------------------------------------------------------------------------------
+| Stage 3           | parent (Bubbling)     | box A ("A")        | parent                 | The event continues bubbling upward to parent. The listener executes on parent and it turns gray. |
+--------------------------------------------------------------------------------------------------------------------------------
+| Stage 4           | body / html / document| box A ("A")        | body / html / document | The event continues bubbling upward, but no listeners are registered on these elements, so nothing executes. |
+--------------------------------------------------------------------------------------------------------------------------------
+
+// IMPORTANT OBSERVATIONS:
+
+• target always refers to the element that was originally clicked.
+• target never changes during the event flow.
+• currentTarget (this) changes at each stage as the event moves.
+• The bubbling phase is responsible for executing listeners on parent elements.
+• The same event object is shared across all stages.
 */
 
 
-// ## OR :
+// OR you can use this example to see what happens behind the scenes for yourself:
 
 const allDivs = document.querySelectorAll("div");
 
@@ -328,7 +355,7 @@ allDivs.forEach(div => {
     e.target.style.backgroundColor = "lightgray";
   });
 });
-
+/*
 --------------------------------------------------
 WHAT HAPPENS WHEN YOU CLICK BOX "A"?
 --------------------------------------------------
@@ -358,7 +385,7 @@ This proves:
 ✔ currentTarget changes
 ✔ target remains the same
 
-  /*
+
 ====================================================================
 FINAL SUMMARY
 ====================================================================
@@ -378,5 +405,4 @@ FINAL SUMMARY
 
 ====================================================================
 END OF FILE
-====================================================================
-*/
+==================================================================== */
