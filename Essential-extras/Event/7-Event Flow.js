@@ -160,10 +160,11 @@ allDivs.forEach(div => {
 
 /*
 ====================================================================
-STEP-BY-STEP EXPLANATION OF EVENT MOVEMENT (BUBBLING)
+EVENT FLOW EXPLANATION — ORGANIZED BY PROGRAMMING STAGES
 ====================================================================
 
-1. INITIAL STATE (BEFORE CLICK)
+STAGE 1: INITIAL STATE (BEFORE ANY INTERACTION)
+--------------------------------------------------------------------
 
 • All div elements have the same click event listener.
 • No element has a gray background.
@@ -179,15 +180,30 @@ document
          ├── box C
          └── box D
 
-2. USER ACTION
+At this stage:
+• Nothing has happened yet.
+• The event system is idle.
+• All listeners are already registered and ready.
 
-The user clicks on: 
-<div class="box">A</div>     
-   
-- This action creates a click event.
+====================================================================
 
-   
-3. TARGET IDENTIFICATION
+STAGE 2: USER INTERACTION & EVENT CREATION
+--------------------------------------------------------------------
+
+The user clicks on:
+<div class="box">A</div>
+
+• This physical action (mouse click) creates a click event.
+• The browser begins processing the event.
+
+At this moment:
+• An event object is created internally by the browser.
+• The event flow is about to start.
+
+====================================================================
+
+STAGE 3: TARGET IDENTIFICATION & TARGET PHASE
+--------------------------------------------------------------------
 
 • The browser determines the element that was actually clicked.
 • This element is called the TARGET.
@@ -195,37 +211,37 @@ The user clicks on:
 TARGET ELEMENT:
 <div class="box">A</div>
 
-** Important rule:
+Important rule:
 The target is always the clicked element and never changes during
-the event flow.
+the entire event flow.
 
-
-4. TARGET PHASE (FIRST EXECUTION)
+TARGET PHASE (FIRST EXECUTION):
 
 • The event starts executing on the target element itself.
-• The event listener attached to box A runs.
+• The event listener attached to box A runs first.
 
-Inside the event listener: */
+Inside the event listener:
 this === box A
 
-// Executed code:
-this.style.backgroundColor = "gray"; 
+Executed code:
+this.style.backgroundColor = "gray";
 
-/* Result:
+Result:
 • Box A turns gray.
 
 At this moment:
 • target content = "A"
 • this refers to box A
 
+====================================================================
 
-5. BUBBLING PHASE BEGINS
+STAGE 4: BUBBLING PHASE (UPWARD MOVEMENT)
+--------------------------------------------------------------------
 
 After the target phase, the event moves upward in the DOM tree.
 This upward movement is called EVENT BUBBLING.
 
-
-6. BUBBLING STEP 1: CHILD1
+--- Bubbling Step 1: child1 ---
 
 Current element:
 <div id="child1" class="child">
@@ -234,48 +250,48 @@ Current element:
 • child1 also has a click listener.
 • The listener executes again.
 
-Inside the event listener: */
+Inside the event listener:
 this === child1
 
-// Executed code:
+Executed code:
 this.style.backgroundColor = "gray";
 
-/* Result:
+Result:
 • Child 1 turns gray.
 
 Important:
 • target is still box A
 • only this has changed
 
+--- Bubbling Step 2: parent ---
 
-7. BUBBLING STEP 2: PARENT
-
-Current element: 
+Current element:
 <div id="parent">
 
 • The event continues bubbling upward.
 • The listener on parent executes.
 
-Inside the event listener: */
+Inside the event listener:
 this === parent
 
-// Executed code:
+Executed code:
 this.style.backgroundColor = "gray";
 
-/* Result:
+Result:
 • Parent turns gray.
 
+====================================================================
 
-8. END OF EVENT FLOW
+STAGE 5: END OF EVENT FLOW & FINAL RESULT
+--------------------------------------------------------------------
 
 • The event continues bubbling to body, html, and document.
 • No listeners exist there.
 • The event flow stops automatically.
 
+FINAL VISUAL RESULT:
 
-9. FINAL VISUAL RESULT
-
-If the user clicks on box A, the following elements turn gray:
+If the user clicks on box A, the following elements turn gray in order:
 
 1. Box A (target)
 2. Child 1
@@ -283,28 +299,18 @@ If the user clicks on box A, the following elements turn gray:
 
 Boxes B, C, and D remain unchanged.
 
+KEY RULES CONFIRMED BY THIS FLOW:
 
-10. KEY RULES DEMONSTRATED
-
-• The event starts on the target element.
+• The event always starts on the target element.
 • The event bubbles upward through parent elements.
 • The same listener runs on every element that has it.
-• this changes at every level.
-• The target always remains the originally clicked element.
+• this changes at every level of bubbling.
+• target always remains the originally clicked element.
 
-====================================================================
-SUMMARY
-====================================================================
-
-This code demonstrates event bubbling clearly:
-A single click on a deeply nested element causes the event to move
-upward through the DOM tree, executing the same event listener on
-each ancestor element in order, starting from the target and ending
-at the highest parent that has a listener.
-
-=============================================================
 */
 
+
+// ## OR :
 
 const allDivs = document.querySelectorAll("div");
 
