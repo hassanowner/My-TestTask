@@ -152,12 +152,26 @@ STEP 1: ACCESS THE FORM
 
 const form = document.getElementById('login');
 
+/* form :
+▼<form id="login" name="login" method="post" action="login.html" class="form col-xs-4 center-block">
+  ►<div class="form-group"> </div>
+  ►<div class="form-group"> </div>
+  ►<div class="checkbox"> </div>
+    <button type="submit" id="submit" name="submit" class="btn btn-primary btn-block"> Login </button>
+ </form>
+
 /*----------------------------------------------------
 STEP 2: ACCESS THE ELEMENTS COLLECTION
 ----------------------------------------------------*/
 
 const formElements = form.elements;
 
+/* formElements:
+<input> </input>
+<input> </input>
+<input> </input>
+<button> </button>
+*/
 console.log(formElements.length); // 4
 
 /*
@@ -175,6 +189,7 @@ const fieldPassword = formElements[1];
 const fieldRemember = formElements[2];
 const buttonSubmit = formElements[3];
 
+console.log(fieldUserName); // ﻿<input type="text" id="username" name="username" class="form-control" placeholder="Username">
 console.log(fieldUserName.id); // "username"
 console.log(fieldPassword.id); // "password"
 console.log(fieldRemember.id); // "remember"
