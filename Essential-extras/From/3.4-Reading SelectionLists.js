@@ -39,7 +39,7 @@ Selection lists are commonly used for:
 
 // HTML FILE (index.html)
 ``` html
-<form id="orderform" name="orderform" class="form col-xs-4 center-block">
+<form id="orderform" name="orderform" class="form center-block">
 
   <select id="order" name="order" class="form-control">
     <option selected value="P001">Pizza Salami</option>
@@ -51,7 +51,7 @@ Selection lists are commonly used for:
 
 </form>
 
-<div class="form col-xs-12 center-block">
+<div class="form Selection-block">
   Selection:
   <div id="selection"></div>
 </div>
