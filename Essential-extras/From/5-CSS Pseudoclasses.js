@@ -47,10 +47,11 @@ CHARACTERISTICS
 - Useful for highlighting mandatory fields
 
 Example: */
+```
 input:required {
   border: 2px solid blue;
 }
-
+```
 /*
 ====================================================================
 3. THE :invalid PSEUDOCLASS
@@ -87,7 +88,7 @@ CSS rules can be combined to precisely control the appearance of form
 elements based on validation state. */
 
 // CSS FILE (styles.css)
-
+``` 
 input:required:invalid,
 input:focus:invalid {
   border: thick solid red;
@@ -96,6 +97,7 @@ input:focus:invalid {
 input:required:valid {
   border: thick solid lightgreen;
 }
+```
 /*
 EXPLANATION
 - Required inputs with invalid values get a red border
