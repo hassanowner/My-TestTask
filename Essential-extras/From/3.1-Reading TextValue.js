@@ -51,10 +51,10 @@ this refers to the element that triggered the event.
 ----------------------------------------------------
 HTML STRUCTURE (RELEVANT PART)
 ---------------------------------------------------- */
-
+```html
 <input type="text" id="username" name="username">
 <input type="password" id="password" name="password">
-
+```
 // JAVASCRIPT EXAMPLE
 
 const inputUsername = document.getElementById('username');
