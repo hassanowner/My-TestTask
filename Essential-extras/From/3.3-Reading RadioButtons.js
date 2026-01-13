@@ -42,7 +42,7 @@ In this example, all radio buttons belong to the group named "order".
 HTML FORM STRUCTURE (index.html)
 ---------------------------------------------------- */
 ```html
-<form id="orderform" name="orderform" class="form col-xs-12 center-block">
+<form id="orderform" name="orderform" class="form center-block">
 
   <div class="form-group">
     <input type="radio" id="P001" name="order" value="P001">
@@ -71,7 +71,7 @@ HTML FORM STRUCTURE (index.html)
 
 </form>
 
-<div class="form col-xs-12 center-block">
+<div class="form Selection-block">
   Selection:
   <div id="selection"></div>
 </div>
