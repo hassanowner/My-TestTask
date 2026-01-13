@@ -39,7 +39,7 @@ Multiple selection lists are commonly used for:
 ==================================================================== */
 
 // HTML FILE (index.html)
-```html
+``` html
 <select id="order" name="order" size="4" multiple>
   <option selected value="P001">Pizza Salami</option>
   <option value="P002">Pizza Margherita</option>
