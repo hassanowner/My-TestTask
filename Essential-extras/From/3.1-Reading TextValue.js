@@ -61,11 +61,11 @@ const inputUsername = document.getElementById('username');
 const inputPassword = document.getElementById('password');
 
 inputUsername.addEventListener('change', function (e) {
-  console.log(this.value);
+  console.log(this.value); // input value 
 });
 
 inputPassword.addEventListener('change', function (e) {
-  console.log(this.value);
+  console.log(this.value); // input value 
 });
 /*
 ----------------------------------------------------
@@ -133,11 +133,11 @@ functions. */
 // JAVASCRIPT EXAMPLE
 
 inputUsername.addEventListener('change', (e) => {
-  console.log(e.target.value);
+  console.log(e.target.value); // input value 
 });
 
 inputPassword.addEventListener('change', (e) => {
-  console.log(e.target.value);
+  console.log(e.target.value); // input value 
 });
 /*
 ----------------------------------------------------
