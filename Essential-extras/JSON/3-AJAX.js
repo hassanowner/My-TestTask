@@ -147,13 +147,13 @@ STEP 5: SEND THE REQUEST
 
 request.send();
 
-Purpose:
+/* Purpose:
 • Sends the HTTP request to the server
 • Optionally sends data (for POST, PUT, etc.)
 • Starts the actual network communication
 
 
-/*
+
 ================================================================================
 5) COMPLETE WORKING EXAMPLE
 ================================================================================ */
