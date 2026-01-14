@@ -169,7 +169,7 @@ DATA ACCESS DIFFERENCE (KEY POINT)
 XML: */
 artist.getElementsByTagName('album')
 
-JSON:
+// JSON:
 artist.albums
 
 /*
