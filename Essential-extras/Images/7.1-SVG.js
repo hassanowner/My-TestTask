@@ -64,7 +64,7 @@ COMMON SVG ELEMENTS
 ================================================================================
 BASIC EXAMPLE
 ================================================================================*/
-
+```
 <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
   <!-- Black background -->
   <rect width="100%" height="100%" fill="#000000" />
@@ -72,7 +72,7 @@ BASIC EXAMPLE
   <!-- White circle -->
   <circle id="circle" cx="100" cy="100" r="80" fill="#ffffff" />
 </svg>
-
+```
 Result:
 • A black square canvas of 200x200 pixels
 • A white circle centered at (100,100) with radius 80
