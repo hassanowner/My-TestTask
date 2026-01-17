@@ -1,5 +1,5 @@
 /* ===========================================================
-   JavaScript Advanced Classes – Complete "Square File"
+   JavaScript Advanced Classes
    ===========================================================
    Topics Covered:
    1. Defining Private Properties and Private Methods
