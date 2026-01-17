@@ -1,5 +1,10 @@
 ![Cybros](https://github.com/phunsukwangdu/image/blob/master/cybros.jpg)
+<p align="center">
+  <a href="README.md"><b>README</b></a> |
+  <a href="Connect.md">Connect</a>
+</p>
 
+---
 
 ## Lecture Series on  HTML,CSS,JS
 
