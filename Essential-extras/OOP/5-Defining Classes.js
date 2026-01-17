@@ -1,5 +1,5 @@
 /* ===========================================================
-   JavaScript Classes – Complete "Square File" Example
+   JavaScript Classes
    ===========================================================
    This file contains:
    1. Defining Classes
