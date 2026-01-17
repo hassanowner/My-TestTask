@@ -1,25 +1,26 @@
 /*
 ========================
-JavaScript Classes Guide
+JavaScript Classes: Complete Guide
 ========================
 
 Topics Covered:
 1. Defining Private Properties and Private Methods
-2. True Private Properties and Methods in ES2022
-3. Deriving from "Classes" (Inheritance)
-4. Overwriting Methods & Calling Superclass Methods
-5. Class Syntax vs. Pseudoclassical Object Orientation
-6. Deriving from Standard Classes (like Error, Array)
+2. True Private Properties and Methods (ES2022)
+3. Class Inheritance / Deriving from Classes
+4. Implicit Constructors and Super Calls
+5. Object Orientation with Class Syntax
+6. Overwriting Methods & Calling Superclass Methods
+7. Deriving from Standard Classes (like Error)
 ========================
 */
 
 /* 
 ========================
-1. Defining Private Properties and Private Methods
+1. Defining Private Properties and Private Methods (Convention)
 ========================
-- Before ES2022, privacy in JS was by convention using _ (underscore)
-- _propertyName indicates intended private access, but is still public
-- Benefits: signals internal use, organizes code
+- Use underscore (_) prefix to indicate a property is intended as private
+- This is only a **convention**: the property can still be accessed and overwritten from outside
+- Benefit: signals intended internal use, organizes code
 */
 
 class Animal {
@@ -33,37 +34,28 @@ class Animal {
     this._age = age ? age : this._age;
   }
 
-  // Methods
-  eat(food) {
-    console.log(`Chow chow, ${food}`);
-  }
-
-  drink(drink) {
-    console.log(`Mmmmmmh, ${drink}`);
-  }
-
-  toString() {
-    return `${this._name}, ${this._color}, ${this._age}`;
-  }
+  eat(food) { console.log(`Chow chow, ${food}`); }
+  drink(drink) { console.log(`Mmmmmmh, ${drink}`); }
+  toString() { return `${this._name}, ${this._color}, ${this._age}`; }
 }
 
 const snake = new Animal('Hissy', 'Green', 5);
 console.log(snake._name); // "Hissy"
-snake._name = 4711;        // Can still overwrite
+snake._name = 4711; 
 console.log(snake._name); // 4711
 
 /*
-Basic Rule: Use _ to indicate private properties, but they are not enforced.
+Rule: _propertyName is a **convention**, not enforced privacy
 */
 
 
 /* 
 ========================
-2. True Private Properties and Methods in ES2022
+2. True Private Properties and Methods (ES2022)
 ========================
-- Use # for true private properties/methods
-- Only accessible inside class (constructor or methods)
-- External access causes SyntaxError
+- Prefix property or method with # to make it truly private
+- Accessible only inside class (constructor or methods)
+- Outside access throws SyntaxError
 */
 
 class AnimalPrivate {
@@ -77,48 +69,41 @@ class AnimalPrivate {
     this.#age = age ? age : this.#age;
   }
 
-  // Getters and Setters
   get name() { return this.#name; }
   set name(name) { this.#name = name; }
 
-  get color() { return this.#color; }
-  set color(color) { this.#color = color; }
-
-  get age() { return this.#age; }
-  set age(age) { this.#age = age; }
+  eat(food) { console.log(`Chow chow, ${food}`); }
+  drink(drink) { console.log(`Mmmmmmh, ${drink}`); }
 
   // Private methods
-  #eat(food) { console.log(`Chow chow, ${food}`); }
-  #drink(drink) { console.log(`Mmmmmmh, ${drink}`); }
+  #eatPrivate(food) { console.log(`Private eating: ${food}`); }
 
-  toString() {
-    return `${this.#name}, ${this.#color}, ${this.#age}`;
-  }
+  toString() { return `${this.#name}, ${this.#color}, ${this.#age}`; }
 }
 
 const snake2 = new AnimalPrivate('Hissy', 'Green', 5);
 console.log(snake2.name); // "Hissy"
-// snake2.#name = 'NewName'; // SyntaxError
+// snake2.#name = 'New'; // SyntaxError
 
 /*
-Basic Rule: Use # for true private members. Access only inside class.
+Rule: Use # for true private members; only accessible inside the class
 */
 
 
 /* 
 ========================
-3. Deriving from "Classes" (Inheritance)
+3. Class Inheritance / Deriving from Classes
 ========================
-- Use extends to inherit from another class
-- Call super() in constructor before using this
-- Subclass can add new properties/methods or override parent methods
+- Use extends to inherit from a parent class
+- Use super() to call parent constructor before using this
+- Subclass inherits methods and properties from parent
 */
 
 class Dog extends Animal {
   _type;
 
   constructor(name, color, age, type) {
-    super(name, color, age); // must call parent constructor first
+    super(name, color, age);
     this._type = type ? type : this._type;
   }
 
@@ -134,107 +119,108 @@ dog.bark();        // "Woof woof"
 console.log(dog.type); // "Maltese"
 
 /*
-Basic Rules:
-1. Use extends to inherit
-2. Call super() before using this
+Rule: Call super() before using this in subclass constructor
 */
 
 
 /* 
 ========================
-4. Overwriting Methods & Calling Superclass Methods
+4. Implicit Constructors and Super Calls
 ========================
-- Overwriting (overriding) a method in a subclass:
-  Simply define a method with the same name
-- Can add additional logic or restrict functionality
-- Use `super.methodName()` to call the original method from the superclass
-- Benefits: avoids duplicate code, enforces rules, adds flexibility
+- If a subclass has no constructor, an implicit constructor is used:
+  constructor(...args) { super(...args); }
+- If constructor exists but omits super(), accessing this causes Error
+- Benefit: allows optional overriding of constructors
 */
 
-/* Food class hierarchy for demonstration */
-class Food {
-  _description;
-  constructor(description) {
-    this._description = description ? description : this._description;
+class DogImplicit extends Animal {
+  _type;
+  // no explicit constructor => super called automatically
+  get type() { return this._type; }
+  set type(type) { this._type = type; }
+  bark() { console.log('Woof woof'); }
+}
+
+const dogImplicit = new DogImplicit('Max', 'Brown', 3);
+dogImplicit.eat('bones'); // works fine
+console.log(dogImplicit.type); // undefined (because _type not initialized)
+
+
+/* 
+========================
+5. Object Orientation with Class Syntax
+========================
+- class keyword creates a “class” (syntactic sugar for prototypical inheritance)
+- constructor() is called automatically with new
+- this refers to the instance
+- class expressions allow assignment to a variable
+*/
+
+class AnimalClassSyntax {
+  name = 'John Sample Fish';
+  color = 'Gold';
+  age = '25';
+
+  constructor(name, color, age) {
+    this.name = name ? name : this.name;
+    this.color = color ? color : this.color;
+    this.age = age ? age : this.age;
   }
+
+  eat(food) { console.log(`Chow chow, ${food}`); }
+  drink(drink) { console.log(`Mmmmmmh, ${drink}`); }
+  toString() { return `${this.name}, ${this.color}, ${this.age}`; }
+}
+
+const defaultAnimal = new AnimalClassSyntax();
+console.log(defaultAnimal.toString()); // John Sample Fish, Gold, 25
+
+const fish = new AnimalClassSyntax('Fishy', 'Green', 2);
+fish.eat('Algen'); // Chow chow, Algen
+console.log(fish.toString()); // Fishy, Green, 2
+
+/*
+Rule: Use constructor() for initialization; access instance properties via this
+*/
+
+
+/* 
+========================
+6. Overwriting Methods & Calling Superclass Methods
+========================
+- Define method in subclass with same name to overwrite
+- Use super.methodName() to call parent method
+- Benefit: avoids code duplication, enables extension
+*/
+
+class Food {
+  constructor(description) { this._description = description; }
   get description() { return this._description; }
-  set description(description) { this._description = description; }
+  set description(desc) { this._description = desc; }
   toString() { return this.description; }
 }
 
 class Meat extends Food {}
 class Bread extends Food {}
 
-const bread = new Bread('wheat bread');
-const meat = new Meat('steak');
-
-console.log(bread.description); // "wheat bread"
-console.log(meat.description);  // "steak"
-
-/* VegetarianDog overrides eat() from Dog */
 class VegetarianDog extends Dog {
   eat(food) {
-    if (food instanceof Meat) {
-      throw new Error("I don't eat meat!");
-    } else {
-      // Call superclass method to reuse existing logic
-      super.eat(food);
-    }
+    if (food instanceof Meat) throw new Error("I don't eat meat!");
+    super.eat(food); // call Dog/Animal eat method
   }
 }
 
 const vegDog = new VegetarianDog('Bello', 'White', 2, 'Maltese');
-vegDog.eat(new Bread('wheat bread')); // "Chow chow, [object Object]!"
-// vegDog.eat(new Meat('steak'));     // Error: "I don't eat meat!"
-
-/*
-Basic Rules:
-- Overwrite method by defining it with the same name
-- Use super.methodName() to reuse superclass logic
-- Avoids duplicate code and enforces object-oriented structure
-*/
+vegDog.eat(new Bread('wheat bread')); // Chow chow, [object Object]!
+// vegDog.eat(new Meat('steak'));     // Error: I don't eat meat!
 
 
 /* 
 ========================
-5. Class Syntax vs. Pseudoclassical Object Orientation
+7. Deriving from Standard Classes
 ========================
-- Classes are syntactic sugar over prototype-based objects
-- Methods defined in class go to prototype
-- Properties defined in constructor are per-instance
-*/
-
-// Old pseudoclassical pattern
-function AnimalOld(name) {
-  this.name = name;
-}
-AnimalOld.prototype.eat = function(food) {
-  console.log(`Chow chow, ${food}`);
-};
-
-const fish = new AnimalOld('Nemo');
-fish.eat('flakes'); // "Chow chow, flakes"
-
-// Class syntax equivalent
-class AnimalClass {
-  constructor(name) { this.name = name; }
-  eat(food) { console.log(`Chow chow, ${food}`); }
-}
-
-const fish2 = new AnimalClass('Dory');
-fish2.eat('flakes'); // "Chow chow, flakes"
-
-/*
-Basic Rule: Class syntax = cleaner modern syntax, same underlying prototype structure
-*/
-
-
-/* 
-========================
-6. Deriving from Standard Classes (like Error, Array)
-========================
-- Use extends to create custom errors or collections
-- Call super() with appropriate parameters
+- Can extend built-in classes like Error, Array, Map
+- Call super() with appropriate arguments
 */
 
 class InvalidValueError extends Error {
@@ -242,31 +228,24 @@ class InvalidValueError extends Error {
     super(`Invalid value: ${value}`);
     this.value = value;
   }
-
   get value() { return this._value; }
-  set value(value) { this._value = value; }
+  set value(v) { this._value = v; }
 }
 
-// throw new InvalidValueError(5); // Example of throwing custom error
-
-/*
-Basic Rule:
-- Extend built-in classes using extends
-- Call super() to initialize parent
-*/
+// throw new InvalidValueError(5); // example
 
 
 /* 
 ========================
 Summary
 ========================
-- _propertyName: convention for private, not enforced
-- #propertyName: true private (ES2022), only accessible inside class
-- extends + super(): for inheritance, must call super() before this
-- Overwriting methods: define same name in subclass
-- Use super.methodName() to reuse parent method
-- Class syntax: cleaner way for pseudoclassical pattern
-- Custom classes can extend standard classes like Error or Array
-- Benefits: Encapsulation, code reuse, clarity, extendibility
+- _propertyName = convention for private (not enforced)
+- #propertyName = true private (ES2022)
+- constructor() initializes instances; called automatically
+- extends + super() = inheritance; super() must be called before this
+- Overwrite methods by redefining in subclass; call super.method() to reuse
+- Class syntax is syntactic sugar; prototypes still used internally
+- Can extend built-in classes for custom errors, arrays, etc.
+- Benefits: Encapsulation, inheritance, code reuse, clarity, extendibility
 ========================
 */
