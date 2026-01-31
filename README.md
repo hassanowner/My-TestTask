@@ -262,14 +262,5 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 5. You can access and review the organized list of all previously covered topics through the link provided here.
 6. \-\-\> [about.md file](about.md)
 
-## Purpose 📚
-This repository is a **learning and revision toolkit**. It is designed for:  
-- Quick **revision** of JavaScript concepts.  
-- Practicing **coding exercises**.  
-- Serving as a **reference for variables, loops, arrays, strings, and functions**.  
-
-> 📌 Consider this repository as a **personal study reference** rather than a production-ready project.
-
----
 
 **😄 Happy Learning and Practicing JavaScript!**
