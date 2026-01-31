@@ -1,3 +1,5 @@
+![Notes-review](images/NOTES.jpg)
+
 ## Purpose 📚
 
 This repository is a **comprehensive JavaScript learning program**, designed to cover **all essential and secondary topics** you need to become a proficient JavaScript developer.  
