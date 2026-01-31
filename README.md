@@ -2,16 +2,17 @@
 
 # JavaScript Course – Comprehensive Educational Review
 
-## Overview :
-This repository contains a **comprehensive collection of JavaScript test tasks** designed for learning, revising, and practicing core JavaScript concepts. Each topic has dedicated exercises and challenges to help reinforce understanding.  
+## Overview :  
+This **JavaScript course** aims to gather as much information as possible on any topic you encounter in JavaScript. The topics are **organized and structured** in a way that makes them easy to follow, while ensuring that each topic is placed according to its **theoretical and practical level**.  
 
-The purpose of this repository is purely **educational**:  
-- To serve as a **revision tool**.  
-- To act as a **quick reference guide** for JavaScript fundamentals.  
-- To provide **hands-on practice** with real examples.  
+Each topic includes **detailed explanations**, covering :  
+- Fundamental concepts and theory.  
+- Practical examples to aid **hands-on understanding**.  
+- A combination of theoretical knowledge and practical experience for each topic.
 
-> !! This is not a production project. It's intended as a **learning and practice resource**.!!
+The purpose of this course is purely **educational**: to serve as a tool for learning, revising, and providing a reliable reference for **JavaScript fundamentals** through real examples and exercises.  
 
+> **Note:** You can explore the main file structure and topic arrangement in the **ROADMAP.md** section.
 ---
 
 ## Structure & Topics 🤖
