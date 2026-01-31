@@ -1,4 +1,4 @@
-[FAQ](images/FAQ.jpg)
+![FAQ-review](images/FAQ.jpg)
 
 # FAQ – Frequently Asked Questions
 
