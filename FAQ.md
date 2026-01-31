@@ -1,3 +1,5 @@
+[FAQ](images/FAQ.jpg)
+
 # FAQ – Frequently Asked Questions
 
 This file answers common questions about how to study and use this JavaScript tutorial program effectively.
