@@ -1,3 +1,5 @@
+![References-review](REFERENCES.jpg)
+
 # REFERENCES
 
 This project was created as a comprehensive JavaScript learning program.
