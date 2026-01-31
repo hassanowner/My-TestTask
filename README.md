@@ -253,6 +253,12 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 - 18.8-Try&Catch&Finally
 
 ---
+## Project Overview 📒
+
+This repository covers a wide range of JavaScript topics studied throughout the **Course** section, along with important and inspiring additional materials.  
+
+> **Note:** You can explore the full structure, extra sections, and detailed explanations of what each part contains in the **[NOTES.md]** file.
+
 
 ## How to Use 🚧
 1. Open each JavaScript file in your preferred editor.  
