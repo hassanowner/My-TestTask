@@ -34,7 +34,6 @@ The main folders are designed as follows:
 │  └─ Challenges
 │     ├─ 3.1-challenges
 │     └─ ...
-...
 
 ## Essential-extras
 ├─ BOM
@@ -58,4 +57,3 @@ The main folders are designed as follows:
 │  └─ 2.1-ArithmeticOperators-summary
 ├─ 03_StringMethods
 │  └─ 3.1-StringMethods-summary
-...
