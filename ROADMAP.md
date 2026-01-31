@@ -11,7 +11,7 @@ The main folders are designed as follows:
 
 
 
-## course
+
 ├─ 01_DataType
 │  ├─ Lessons
 │  │  ├─ 1.1-DataType
@@ -35,7 +35,7 @@ The main folders are designed as follows:
 │     ├─ 3.1-challenges
 │     └─ ...
 
-## Essential-extras
+
 ├─ BOM
 │  ├─ 1-WindowObject Properties
 │  ├─ 2-WindowObject Methods
@@ -50,7 +50,7 @@ The main folders are designed as follows:
 │  ├─ 1-AdditionalTopic1
 │  └─ 2-AdditionalTopic2
 
-## Summaries
+
 ├─ 01_DataType
 │  └─ 1.1-DataType-summary
 ├─ 02_Number
