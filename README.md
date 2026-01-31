@@ -265,13 +265,13 @@ You can review:
 - External references and learning resources
 
 For official references and learning sources, see:
-- REFERENCES.md (located in the root directory of the repository)
+- [REFERENCES FILE](REFERENCES.md) (located in the root directory of the repository)
 
 For common questions about how to study, practice, and use this course effectively, see:
-- FAQ.md (located in the root directory of the repository)
+- [FAQ FILE](FAQ.md) (located in the root directory of the repository)
 
 You can also explore detailed explanations of extra sections and notes in:
-- NOTES.md
+- [NOTES FILE](NOTES.md)
 
 ---
 
