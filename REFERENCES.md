@@ -1,4 +1,4 @@
-![References-review](REFERENCES.jpg)
+![References-review](images/REFERENCES.jpg)
 
 # REFERENCES
 
