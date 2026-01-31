@@ -11,9 +11,8 @@ The main folders are designed as follows:
 > The following tree shows the **hierarchy of folders and files**, 
 so you can quickly locate lessons, exercises, or summaries for any JavaScript topic.
 
-```
+
 ## course
-```
 ├─ 01_DataType
 │  ├─ Lessons
 │  │  ├─ 1.1-DataType
