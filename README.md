@@ -158,18 +158,99 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 - 11.9-BOM SessionStorage
 
 ### 12_Destructuring
+- 12.1-Destructuring Introduction
+- 12.1.2-Destructuring IntroductionNotes
+- 12.2-Destructuring nested
+- 12.3-Destructuring Swapping
+- 12.4-Destructuring Object
+- 12.5-Destructuring AdvancedObject
+- 12.6-Destrutructing FunctionParameters
+- 12.7-Destructuring MixedContent
+- 12.8-Destructuring Mixed
 
 ### 13_Set Data Type
+- 13.1-SetDataType Set
+- 13.2-SetDataType WeakSet
+- 13.3.1-MapDataType Map
+- 13.3.2-MapDataType MapMethods
+- 13.3.3-MapDataType MapMethods
+- 13.4-MapDataType WeakMap
+- 13.5-Array from
+- 13.6-Array copyWithin
+- 13.7-Array some
+- 13.8-Array every
+- 13.9-Spread Operator
 
 ### 14_Regular Expressions
+- 14.1-Regex Introduction
+- 14.2-Flags&match
+- 14.3.1-Ranges
+- 14.3.2-RangesAdvanced
+- 14.4-CharacterClassesP1
+- 14.4-CharacterClassesP2
+- 14.5.1-Quantifiers
+- 14.5.2-Quantifiers
+- 14.5.3-Quantifiers
+- 14.6-replace
+- 14.7-inputValidation
 
 ### 15_00P
+- 15.1-OOPintroduction
+- 15.2.1-ConstructorFunction
+- 15.2.2-ConstructorFunction
+- 15.2.3-ConstructorFunction
+- 15.2.4-ConstructorFunction
+- 15.3-StaticProperties
+- 15.4-Inheritance
+- 15.5-Encapsulation
+- 15.6-Prototype
+- 15.7-PrototypeChainExtension
+- 15.8.1-ObjectMetadata
+- 15.8.2-For-in Loop
+- 15.8.3-ObjectMetadata
 
 ### 16_DataTime
+- 16.1-DateIntroduction
+- 16.2.1-DateMethods
+- 16.2.2-DateSetMethods
+- 16.3-Creation&Parsing
+- 16.4-TrackingOperation
+- 16.5-Generators
+- 16.6-DelegateGenerators
+- 16.7-InfiniteGenerators
+- 16.8.1-Modules
+- 16.8.2-ModulesExample
+- 16.9.1-ModulesDefault&Alias
+- 16.9.2-ModulesDefault
 
 ### 17_JSON
+- 17.1.1-JSONintroduction
+- 17.1.2-JSONsyntax
+- 17.2-APIoverview
+- 17.3-JSONconverting
+- 17.4-Asynchronous&Synchronous
+- 17.5.1-CallStack
+- 17.5.2-EventLoop&CallbackQueue
+- 17.5.3-FullDetailedGuide
+- 17.6-AJAX
+- 17.7.1-AJAXstatusCodes
+- 17.7.2-AnoterExplaining
+- 17.7.3-AdvancedExamples
+- 17.8.1-LoopingThroughData
+- 17.8.2-Examples
 
 ### 18_Promise
+- 18.1.1-BeforeIntroduction
+- 18.1.2-Promise
+- 18.1.3-ImportantNotes
+- 18.2-HandlingPromises(catch&finally)
+- 18.3-Promise&XHR
+- 18.4-FetchAPI
+- 18.5-all&allSettled&Race
+- 18.6.1-ASYNC
+- 18.6.2-ASYNC(anotherExplain)
+- 18.7-Await
+- 18.8-Try&Catch&Finally
 
 ---
 
