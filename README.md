@@ -12,7 +12,7 @@ Each topic includes **detailed explanations**, covering :
 
 The purpose of this course is purely **educational**: to serve as a tool for learning, revising, and providing a reliable reference for **JavaScript fundamentals** through real examples and exercises.  
 
-> **Note:** You can explore the main file structure and topic arrangement in the **[ROADMAP.json File](ROADMAP.json)** section.
+> **Note:** You can explore the main file structure and topic arrangement in the **[ROADMAP File](ROADMAP.json)** section.
 ---
 
 ## Structure & Topics 🤖
@@ -257,7 +257,7 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 
 This repository covers a wide range of JavaScript topics studied throughout the **Course** section, along with important and inspiring additional materials.  
 
-> **Note:** You can explore the full structure, extra sections, and detailed explanations of what each part contains in the **[NOTES.md File](NOTES.md)** Section.
+> **Note:** You can explore the full structure, extra sections, and detailed explanations of what each part contains in the **[NOTES File](NOTES.md)** Section.
 
 
 ## How to Use 🚧
