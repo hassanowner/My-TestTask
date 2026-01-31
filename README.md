@@ -18,12 +18,12 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 ## Structure & Topics 🤖
 
 ### 01_DataType
-* 1.1-DataType
-* 1.2.1-Variables
-* 1.2.2-Variables
-* 1.3-StringSyntax
-* 1.4-Concatenation
-* 1.5-TemplateLiterals
+- 1.1-DataType
+- 1.2.1-Variables
+- 1.2.2-Variables
+- 1.3-StringSyntax
+- 1.4-Concatenation
+- 1.5-TemplateLiterals
 
 ### 02_Number
 
