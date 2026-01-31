@@ -12,7 +12,7 @@ Each topic includes **detailed explanations**, covering :
 
 The purpose of this course is purely **educational**: to serve as a tool for learning, revising, and providing a reliable reference for **JavaScript fundamentals** through real examples and exercises.  
 
-> **Note:** You can explore the main file structure and topic arrangement in the **[ROADMAP.md File](ROADMAP.md)** section.
+> **Note:** You can explore the main file structure and topic arrangement in the **[ROADMAP.json File](ROADMAP.json)** section.
 ---
 
 ## Structure & Topics 🤖
