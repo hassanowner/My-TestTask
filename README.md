@@ -285,4 +285,4 @@ You can also explore detailed explanations of extra sections and notes in:
 6. Complete the practice and challenge sections after each topic.
 7. Review the NOTES.md, FAQ.md, and REFERENCES.md files whenever you need guidance or deeper understanding.
 
-**😄 Happy Learning and Practicing JavaScript !**
+>  Happy Learning and Practicing JavaScript ! 🕷️🕸️ 
