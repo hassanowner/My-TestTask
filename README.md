@@ -17,8 +17,41 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 
 ## Structure & Topics 🤖
 
-### 1. Data Types & Variables ( Part 1 & Part 2 )
-- **
+### 01_DataType
+
+### 02_Number
+
+### 03_StringMethods
+
+### 04_ifCondition
+
+### 05_Array
+
+### 06_Loop
+
+### 07_Function
+
+### 08_Higher Order Functions
+
+### 09_Obiect
+
+### 10_DOM
+
+### 11_BOM
+
+### 12_Destructuring
+
+### 13_Set Data Type
+
+### 14_Regular Expressions
+
+### 15_00P
+
+### 16_DataTime
+
+### 17_JSON
+
+### 18_Promise
 
 ---
 
