@@ -1,4 +1,4 @@
-![banner-review](images/banner.png)
+![banner-review](images/pic.png)
 
 # JavaScript Course – Comprehensive Educational Review
 
