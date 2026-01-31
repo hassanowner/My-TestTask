@@ -253,20 +253,36 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 - 18.8-Try&Catch&Finally
 
 ---
-## Project Overview 📒
+## Project Summary & Additional Resources 📚
 
-This repository covers a wide range of JavaScript topics studied throughout the **Course** section, along with important and inspiring additional materials.  
+This repository is designed to be a complete educational journey through JavaScript.
+While studying the Course folders, you can also explore additional supporting materials that help you understand the content more deeply.
 
-> **Note:** You can explore the full structure, extra sections, and detailed explanations of what each part contains in the **[NOTES File](NOTES.md)** Section.
+You can review:
+- Structured course lessons and explanations
+- Practice tasks and real-world challenges
+- Notes and conceptual summaries
+- External references and learning resources
 
+For official references and learning sources, see:
+- REFERENCES.md (located in the root directory of the repository)
+
+For common questions about how to study, practice, and use this course effectively, see:
+- FAQ.md (located in the root directory of the repository)
+
+You can also explore detailed explanations of extra sections and notes in:
+- NOTES.md
+
+---
 
 ## How to Use 🚧
-1. Open each JavaScript file in your preferred editor.  
-2. Read the comments and instructions for each task.  
-3. Run the code in **browser console** or **Node.js** to see outputs.  
-4. Modify and experiment with the code to understand the concepts better.
-5. You can access and review the organized list of all previously covered topics through the link provided here.
-6. \-\-\> [about.md file](NOTES.md)
 
+1. Start with the first folder and follow the course in order.
+2. Open each JavaScript file in your preferred code editor.
+3. Read the comments and explanations carefully.
+4. Run the code using the browser console or Node.js to view the output.
+5. Rewrite the code manually and experiment with changes to better understand the concepts.
+6. Complete the practice and challenge sections after each topic.
+7. Review the NOTES.md, FAQ.md, and REFERENCES.md files whenever you need guidance or deeper understanding.
 
-**😄 Happy Learning and Practicing JavaScript!**
+**😄 Happy Learning and Practicing JavaScript !**
