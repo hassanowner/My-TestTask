@@ -260,7 +260,7 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 3. Run the code in **browser console** or **Node.js** to see outputs.  
 4. Modify and experiment with the code to understand the concepts better.
 5. You can access and review the organized list of all previously covered topics through the link provided here.
-6. \-\-\> [about.md file](about.md)
+6. \-\-\> [about.md file](NOTES.md)
 
 
 **😄 Happy Learning and Practicing JavaScript!**
