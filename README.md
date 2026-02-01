@@ -17,7 +17,7 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 
 ## Structure & Topics 🤖
 
-### 01_DataType
+### [01_DataType](Course\01_DataType)
 - 1.1-DataType
 - 1.2.1-Variables
 - 1.2.2-Variables
