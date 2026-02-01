@@ -88,7 +88,7 @@ The purpose of this course is purely **educational**: to serve as a tool for lea
 - 7.9.3-Scope(P3)
 - 7.9.2-Closures
 
-### [08_Higher Order Functions](Course/08_Higher_Order_Functions)
+### [08_Higher Order Functions](https://github.com/hassanowner/My-TestTask/tree/6b2179b59fcc17d06bab5c3c771e8efd255af959/Course/08_Higher%20Order%20Functions)
 - 8.1.1-Map(P1)
 - 8.1.2-Map(P2)
 - 8.2.1-Filter(P1)
